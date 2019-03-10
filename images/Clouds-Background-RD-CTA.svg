@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400px" height="360px" viewBox="0 0 1400 360" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Clouds Background RD CTA</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M-9.09494702e-13,2.49110162 C-9.09494702e-13,1.11530419 1.11151935,0 2.4994178,0 L1397.50058,0 C1398.88097,0 1400,1.11404482 1400,2.49110162 L1400,357.508898 C1400,358.884696 1398.88848,360 1397.50058,360 L2.4994178,360 C1.11902746,360 -9.09494702e-13,358.885955 -9.09494702e-13,357.508898 L-9.09494702e-13,2.49110162 Z" id="path-1"></path>
+        <path d="M-9.09494702e-13,2.49110162 C-9.09494702e-13,1.11530419 1.11151935,0 2.4994178,0 L1397.50058,0 C1398.88097,0 1400,1.11404482 1400,2.49110162 L1400,357.508898 C1400,358.884696 1398.88848,360 1397.50058,360 L2.4994178,360 C1.11902746,360 -9.09494702e-13,358.885955 -9.09494702e-13,357.508898 L-9.09494702e-13,2.49110162 Z" id="path-3"></path>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-5">
+            <stop stop-color="#003D4C" offset="0%"></stop>
+            <stop stop-color="#B2C4C9" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-6" x="-9.09494702e-13" y="0" width="1400" height="360"></rect>
+        <linearGradient x1="57.556963%" y1="29.624104%" x2="57.556963%" y2="100%" id="linearGradient-8">
+            <stop stop-color="#FDFDFD" stop-opacity="1.11962011" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="57.556963%" y1="29.624104%" x2="57.556963%" y2="100%" id="linearGradient-9">
+            <stop stop-color="#FDFDFD" stop-opacity="1.11962011" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="57.556963%" y1="29.624104%" x2="57.556963%" y2="100%" id="linearGradient-10">
+            <stop stop-color="#FDFDFD" stop-opacity="1.11962011" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="57.556963%" y1="29.624104%" x2="57.556963%" y2="100%" id="linearGradient-11">
+            <stop stop-color="#FDFDFD" stop-opacity="1.11962011" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Marketing-Website-V0.7" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-1400px-Airlines-Hotels-&amp;-OTAs-1" transform="translate(0.000000, -2716.000000)">
+            <g id="Request-Demo-Form" transform="translate(0.000000, 2716.000000)">
+                <g id="Clouds-Background-RD-CTA" transform="translate(0.000000, 0.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#DAEFF4" opacity="0.5" xlink:href="#path-1"></use>
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <use id="Mask" fill="#DAEFF4" opacity="0.5" xlink:href="#path-3"></use>
+                    <mask id="mask-7" fill="white">
+                        <use xlink:href="#path-6"></use>
+                    </mask>
+                    <use id="Rectangle-2" fill-opacity="0.5" fill="url(#linearGradient-5)" opacity="0.1" xlink:href="#path-6"></use>
+                    <path d="M1203.46089,231.824092 C1188.20119,213.018832 1164.87367,200.991835 1138.72434,200.991835 C1128.94681,200.991835 1119.56688,202.678885 1110.85084,205.7668 C1088.05106,177.840887 1053.30738,160 1014.38039,160 C921.169107,160 890.150892,284 828,284 L1355,284 C1304.2484,284 1276.33152,228.660422 1221.96169,228.660422 C1215.47346,228.660422 1209.24909,229.783519 1203.46089,231.824092" id="Fill-1-Copy-6" fill="url(#linearGradient-8)" opacity="0.861124067" mask="url(#mask-7)"></path>
+                    <path d="M71.1871332,75.5868971 C82.5429674,75.5868971 93.4370116,77.6276837 103.560007,81.3630651 C130.040161,47.5817187 170.392204,26 215.602837,26 C323.86039,26 359.885602,176 432.068966,176 L-180,176 C-121.056014,176 -88.6327636,109.056962 -25.4864893,109.056962 C-17.9509173,109.056962 -10.7218058,110.415547 -3.99926397,112.883982 C13.7236737,90.1356839 40.8167489,75.5868971 71.1871332,75.5868971 Z" id="Fill-1-Copy-8" fill="url(#linearGradient-9)" mask="url(#mask-7)"></path>
+                    <path d="M1272.68854,343.7604 C1279.27492,343.7604 1285.59347,344.944057 1291.4648,347.110578 C1306.82329,327.517397 1330.22748,315 1356.44965,315 C1419.23903,315 1440.13365,402 1482,402 L1127,402 C1161.18751,402 1179.993,363.173038 1216.61784,363.173038 C1220.98847,363.173038 1225.18135,363.961017 1229.08043,365.39271 C1239.35973,352.198697 1255.07371,343.7604 1272.68854,343.7604 Z" id="Fill-1-Copy-8" fill="url(#linearGradient-10)" mask="url(#mask-7)"></path>
+                    <path d="M675.665171,312.7604 C682.56696,312.7604 689.188083,313.944057 695.340583,316.110578 C711.434549,296.517397 735.959498,284 763.437375,284 C829.233571,284 851.128782,371 895,371 L523,371 C558.82466,371 578.53069,332.173038 616.909395,332.173038 C621.489324,332.173038 625.882995,332.961017 629.968785,334.39271 C640.740338,321.198697 657.206822,312.7604 675.665171,312.7604 Z" id="Fill-1-Copy-8" fill="url(#linearGradient-11)" mask="url(#mask-7)" transform="translate(709.000000, 327.500000) scale(-1, 1) translate(-709.000000, -327.500000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="371px" height="194px" viewBox="0 0 371 194" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Airplane Hotel Suitcase Tickets Illustration</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="36" height="24" rx="1"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="36" height="24" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="0" y="0" width="36" height="24" rx="1"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="36" height="24" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <linearGradient x1="100%" y1="50%" x2="2.47245303%" y2="50%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="34.9798245%" y1="47.3288033%" x2="89.7761211%" y2="57.5486087%" id="linearGradient-6">
+            <stop stop-color="#85CDDB" offset="0%"></stop>
+            <stop stop-color="#4C8CA7" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="34.9798245%" y1="47.3029501%" x2="89.7761211%" y2="57.6216679%" id="linearGradient-7">
+            <stop stop-color="#85CDDB" offset="0%"></stop>
+            <stop stop-color="#4C8CA7" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="34.9798245%" y1="47.4044886%" x2="89.7761211%" y2="57.3347274%" id="linearGradient-8">
+            <stop stop-color="#85CDDB" offset="0%"></stop>
+            <stop stop-color="#4C8CA7" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-9">
+            <stop stop-color="#85CDDB" offset="0%"></stop>
+            <stop stop-color="#4C8CA7" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Marketing-Website-V0.7" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-1400px-Airlines-Hotels-&amp;-OTAs-1" transform="translate(-857.000000, -361.000000)">
+            <g id="Hero" transform="translate(-10.000000, 0.000000)">
+                <g id="Hero-Image-Illustration" transform="translate(185.000000, 305.000000)">
+                    <g id="Airplane-Hotel-Suitcase-Tickets-Illustration" transform="translate(678.000000, 56.000000)">
+                        <g id="Suitcase-and-Ticket-Illustration" transform="translate(77.000000, 117.000000)">
+                            <g id="Group-35" transform="translate(0.000000, 9.000000)">
+                                <g id="Group-29" fill="#FFFFFF" stroke="#003D4C" stroke-width="2">
+                                    <path d="M73,9 L49,9 L49,3 C49,1.8954305 48.1045695,1 47,1 L29,1 C27.8954305,1 27,1.8954305 27,3 L27,9 L3,9 C1.8954305,9 1,9.8954305 1,11 L1,61 C1,62.1045695 1.8954305,63 3,63 L73,63 C74.1045695,63 75,62.1045695 75,61 L75,11 C75,9.8954305 74.1045695,9 73,9 Z" id="Combined-Shape"></path>
+                                    <path d="M44,9 L44,5 L32,5 L32,9 L44,9 Z" id="Combined-Shape"></path>
+                                </g>
+                                <path d="M58,43 L68,48.5 L58,54 L48,48.5 L58,43 Z" id="Combined-Shape" fill="#85CDDB"></path>
+                                <circle id="Oval" fill="#D7D2CB" cx="32" cy="49" r="6"></circle>
+                                <rect id="Rectangle" fill="#FF585F" transform="translate(17.728609, 34.193075) rotate(-15.000000) translate(-17.728609, -34.193075) " x="8.72860862" y="30.1930747" width="18" height="8"></rect>
+                            </g>
+                            <g id="Group-17" transform="translate(58.000000, 0.000000)" stroke="#4A4A4A">
+                                <g id="Group-16-Copy" transform="translate(15.000000, 0.000000)">
+                                    <rect id="Rectangle" stroke-width="2" fill="#F3F3F3" x="1" y="1" width="34" height="63" rx="1"></rect>
+                                    <use id="Rectangle-Copy-75" mask="url(#mask-2)" stroke-width="4" stroke-dasharray="3" xlink:href="#path-1"></use>
+                                </g>
+                                <g id="Group-16" transform="translate(0.000000, 8.000000)">
+                                    <rect id="Rectangle" stroke-width="2" fill="#FFFFFF" x="1" y="1" width="34" height="63" rx="1"></rect>
+                                    <g id="Group-15" transform="translate(6.000000, 5.000000)" stroke-linecap="round" stroke-width="2">
+                                        <path d="M0.5,7.13970346 L21.3916576,7.13970346" id="Line-4"></path>
+                                        <path d="M3,7.13970346 L11,1" id="Line-4-Copy"></path>
+                                        <path d="M3,13.1397035 L11,7" id="Line-4-Copy-2" transform="translate(7.500000, 10.000000) scale(1, -1) translate(-7.500000, -10.000000) "></path>
+                                        <path d="M20.5,7.13970346 L24,4.5" id="Line-4-Copy-3" stroke-linejoin="bevel"></path>
+                                        <path d="M20.5,9.13970346 L24,6.5" id="Line-4-Copy-4" stroke-linejoin="bevel" transform="translate(22.500000, 8.000000) scale(1, -1) translate(-22.500000, -8.000000) "></path>
+                                    </g>
+                                    <use id="Rectangle-Copy-75" mask="url(#mask-4)" stroke-width="4" stroke-dasharray="3" xlink:href="#path-3"></use>
+                                    <path d="M27.3916576,31 L27.3916576,55" id="Line-5" stroke-width="2" stroke-linecap="square"></path>
+                                    <path d="M21.3916576,31 L21.3916576,55" id="Line-5-Copy" stroke-width="2" stroke-linecap="square"></path>
+                                    <path d="M15.3916576,31 L15.3916576,55" id="Line-5-Copy-2" stroke-width="2" stroke-linecap="square"></path>
+                                    <path d="M9.39165758,31 L9.39165758,45" id="Line-5-Copy-3" stroke-width="2" stroke-linecap="square"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Airplane-Illustration">
+                            <rect id="Rectangle" fill="url(#linearGradient-5)" x="0" y="39" width="171" height="12"></rect>
+                            <g id="Group-18" transform="translate(137.000000, 0.000000)">
+                                <path d="M85.0344828,22.0089289 L125.482759,22.0089289 C127.827586,21.6124673 129,20.0266209 129,17.2513897 C129,13.0885429 124.896552,11.4611551 123.137931,12.274849 C122.356322,8.99340328 119.034483,6.88586495 113.172414,5.95223401 C112.781609,2.09849181 110.729885,0.116183797 107.017241,0.00530996807 C101.448276,-0.161000775 96.7586207,3.61324266 95.5862069,6.56681555 C89.3333333,4.96770972 85.816092,5.95223401 85.0344828,9.52038844 C80.3448276,9.91685004 78,12.0973889 78,16.0620049 C78,20.0266209 80.3448276,22.0089289 85.0344828,22.0089289 Z" id="Path-11-Copy" fill="url(#linearGradient-6)"></path>
+                                <path d="M12.137931,17.0089289 L35.9310345,17.0089289 C37.3103448,16.7745904 38,15.8372361 38,14.1968662 C38,11.7363112 35.5862069,10.7744029 34.5517241,11.2553571 C34.091954,9.31577636 32.137931,8.07006302 28.6896552,7.51821706 C28.4597701,5.24036617 27.2528736,4.06867334 25.0689655,4.00313859 C21.7931034,3.90483646 19.0344828,6.13569761 18.3448276,7.88148088 C14.6666667,6.93628931 12.5977011,7.51821706 12.137931,9.62726414 C9.37931034,9.86160271 8,11.1504648 8,13.4938505 C8,15.8372361 9.37931034,17.0089289 12.137931,17.0089289 Z" id="Path-11-Copy-2" fill="url(#linearGradient-7)"></path>
+                                <g id="Group-Copy-2" transform="translate(28.000000, 10.000000)">
+                                    <path d="M54.3487365,44 L11,44 L4.76538973,44 L0.765389733,13 L7,13 L11.8387097,23 L52.6408537,23 L35.5257649,0 L44,0 L73.3834128,23 L97,23 C100.14096,23.1476407 101.827177,23.2583712 102.058652,23.3321915 C112.686217,26.721461 118,30.1107305 118,33.5 C118,36.8901127 112.683573,40.2802255 102.050719,43.6703382 C101.82095,43.7435964 100.137377,43.8534837 97,44 L73.525656,44 L44.4742351,67.4826364 L36,67.4826364 L54.3487365,44 Z" id="Combined-Shape" stroke="#003D4C" stroke-width="3" fill="#FFFFFF" stroke-linejoin="round"></path>
+                                    <circle id="Oval" fill="#003D4C" cx="20.5" cy="33.5" r="2.5"></circle>
+                                    <circle id="Oval-Copy-2" fill="#003D4C" cx="30.5" cy="33.5" r="2.5"></circle>
+                                    <circle id="Oval-Copy-13" fill="#003D4C" cx="40.5" cy="33.5" r="2.5"></circle>
+                                    <circle id="Oval-Copy-14" fill="#003D4C" cx="50.5" cy="33.5" r="2.5"></circle>
+                                    <circle id="Oval-Copy-15" fill="#003D4C" cx="60.5" cy="33.5" r="2.5"></circle>
+                                    <circle id="Oval-Copy-16" fill="#003D4C" cx="70.5" cy="33.5" r="2.5"></circle>
+                                    <circle id="Oval-Copy-17" fill="#003D4C" cx="80.5" cy="33.5" r="2.5"></circle>
+                                </g>
+                                <path d="M12,96.0089289 L81,96.0089289 C85,95.3422623 87,92.6755956 87,88.0089289 C87,81.0089289 80,78.2724088 77,79.6406689 C75.6666667,74.1227815 70,70.5788682 60,69.0089289 C59.3333333,62.5287012 55.8333333,59.1953679 49.5,59.0089289 C40,58.7292705 32,65.0758177 30,70.0423733 C19.3333333,67.3534104 13.3333333,69.0089289 12,75.0089289 C4,75.6755956 9.59626723e-16,79.3422623 0,86.0089289 C0,92.6755956 4,96.0089289 12,96.0089289 Z" id="Path-11" fill="url(#linearGradient-8)"></path>
+                            </g>
+                        </g>
+                        <g id="Hotel-Illustration" transform="translate(225.000000, 81.000000)">
+                            <g id="Group-24" transform="translate(99.000000, 61.000000)">
+                                <rect id="Rectangle" stroke="#003D4C" stroke-width="3" fill="#FFFFFF" x="1.5" y="1.5" width="24" height="49"></rect>
+                                <g id="Group-23" transform="translate(6.000000, 9.000000)" fill="#4C8CA7">
+                                    <rect id="Rectangle-Copy-78" x="0" y="0" width="5" height="5"></rect>
+                                    <rect id="Rectangle-Copy-79" x="9.5" y="0" width="5" height="5"></rect>
+                                    <rect id="Rectangle-Copy-86" x="0" y="7.5" width="5" height="5"></rect>
+                                    <rect id="Rectangle-Copy-85" x="9.5" y="7.5" width="5" height="5"></rect>
+                                    <rect id="Rectangle-Copy-89" x="0" y="15" width="5" height="5"></rect>
+                                    <rect id="Rectangle-Copy-88" x="9.5" y="15" width="5" height="5"></rect>
+                                    <rect id="Rectangle-Copy-92" x="0" y="22.5" width="5" height="5"></rect>
+                                    <rect id="Rectangle-Copy-91" x="9.5" y="22.5" width="5" height="5"></rect>
+                                </g>
+                            </g>
+                            <g id="Group-24-Copy" transform="translate(22.000000, 61.000000)">
+                                <rect id="Rectangle" stroke="#003D4C" stroke-width="3" fill="#FFFFFF" x="1.5" y="1.5" width="24" height="49"></rect>
+                                <g id="Group-23" transform="translate(6.000000, 9.000000)" fill="#4C8CA7">
+                                    <rect id="Rectangle-Copy-78" x="0" y="0" width="5" height="5"></rect>
+                                    <rect id="Rectangle-Copy-79" x="9.5" y="0" width="5" height="5"></rect>
+                                    <rect id="Rectangle-Copy-86" x="0" y="7.5" width="5" height="5"></rect>
+                                    <rect id="Rectangle-Copy-85" x="9.5" y="7.5" width="5" height="5"></rect>
+                                    <rect id="Rectangle-Copy-89" x="0" y="15" width="5" height="5"></rect>
+                                    <rect id="Rectangle-Copy-88" x="9.5" y="15" width="5" height="5"></rect>
+                                    <rect id="Rectangle-Copy-92" x="0" y="22.5" width="5" height="5"></rect>
+                                    <rect id="Rectangle-Copy-91" x="9.5" y="22.5" width="5" height="5"></rect>
+                                </g>
+                            </g>
+                            <g id="Group-22" transform="translate(47.000000, 0.000000)">
+                                <rect id="Rectangle" stroke="#003D4C" stroke-width="3" fill="#FFFFFF" x="1.5" y="10.5" width="51" height="101"></rect>
+                                <g id="Group-20" transform="translate(4.000000, 0.000000)" fill="#003D4C">
+                                    <circle id="Oval" cx="3" cy="3" r="3"></circle>
+                                    <circle id="Oval-Copy-21" cx="13" cy="3" r="3"></circle>
+                                    <circle id="Oval-Copy-22" cx="23" cy="3" r="3"></circle>
+                                    <circle id="Oval-Copy-23" cx="33" cy="3" r="3"></circle>
+                                    <circle id="Oval-Copy-24" cx="43" cy="3" r="3"></circle>
+                                </g>
+                                <g id="Group-19" transform="translate(7.000000, 16.000000)" fill="#4C8CA7">
+                                    <rect id="Rectangle-Copy-78" x="0" y="0" width="10" height="10"></rect>
+                                    <rect id="Rectangle-Copy-79" x="15" y="0" width="10" height="10"></rect>
+                                    <rect id="Rectangle-Copy-80" x="30" y="0" width="10" height="10"></rect>
+                                    <rect id="Rectangle-Copy-86" x="0" y="15" width="10" height="10"></rect>
+                                    <rect id="Rectangle-Copy-85" x="15" y="15" width="10" height="10"></rect>
+                                    <rect id="Rectangle-Copy-84" x="30" y="15" width="10" height="10"></rect>
+                                    <rect id="Rectangle-Copy-89" x="0" y="30" width="10" height="10"></rect>
+                                    <rect id="Rectangle-Copy-88" x="15" y="30" width="10" height="10"></rect>
+                                    <rect id="Rectangle-Copy-87" x="30" y="30" width="10" height="10"></rect>
+                                    <rect id="Rectangle-Copy-92" x="0" y="45" width="10" height="10"></rect>
+                                    <rect id="Rectangle-Copy-91" x="15" y="45" width="10" height="10"></rect>
+                                    <rect id="Rectangle-Copy-90" x="30" y="45" width="10" height="10"></rect>
+                                    <rect id="Rectangle-Copy-95" x="0" y="60" width="10" height="10"></rect>
+                                    <rect id="Rectangle-Copy-94" x="15" y="60" width="10" height="10"></rect>
+                                    <rect id="Rectangle-Copy-93" x="30" y="60" width="10" height="10"></rect>
+                                </g>
+                                <rect id="Rectangle-Copy-76" stroke="#003D4C" stroke-width="3" x="15.5" y="93.5" width="23" height="18"></rect>
+                                <rect id="Rectangle-Copy-77" stroke="#003D4C" stroke-width="2" fill="#003D4C" x="25" y="102" width="4" height="10"></rect>
+                            </g>
+                            <g id="Group-21" transform="translate(127.000000, 56.000000)">
+                                <path d="M2.84217094e-14,55.5 L21,55.5" id="Line-6-Copy" stroke="#003D4C" stroke-width="3" stroke-linecap="square"></path>
+                                <path d="M11,55.5 L11,42.3895538" id="Line-6-Copy-3" stroke="#003D4C" stroke-width="3" stroke-linecap="square"></path>
+                                <polygon id="Triangle" fill="url(#linearGradient-9)" points="10.5 0 19 47 2 47"></polygon>
+                            </g>
+                            <g id="Group-21-Copy" transform="translate(0.000000, 56.000000)">
+                                <path d="M2.84217094e-14,55.5 L21,55.5" id="Line-6-Copy" stroke="#003D4C" stroke-width="3" stroke-linecap="square"></path>
+                                <path d="M11,55.5 L11,42.3895538" id="Line-6-Copy-3" stroke="#003D4C" stroke-width="3" stroke-linecap="square"></path>
+                                <polygon id="Triangle" fill="url(#linearGradient-9)" points="10.5 0 19 47 2 47"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
