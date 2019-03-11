@@ -183,37 +183,5 @@ window.cookieconsent.initialise({
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TimelineMax.min.js"></script>
   <script src="hgb-scripts/animations.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script>
-$(document).ready(function() {
-  $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
-    if ($.isMobile) {
-      return;
-    } else {
-      if ($('.tabs-menu-2.w-tab-menu').css('right') == '160px') {
-        return;
-      } else {
-          $('.tabs-menu-2.w-tab-menu').animate({'right':'+=160px'});
-        }
-      }
-    });
-  }
-);
-</script>
-  <script>
-$(document).ready(function() {
-  $('.tab-link-tab-1-2.w-inline-block.w-tab-link').click( function() {
-    if ($.isMobile) {
-      return;
-    } else {
-      if ($('.tabs-menu-2.w-tab-menu').css('right') == '0px'){
-        return;
-      } else {
-        $('.tabs-menu-2.w-tab-menu').animate({'right':'+=-160px'});
-        }
-      }
-    });
-  }
-);
-</script>
 </body>
 </html>

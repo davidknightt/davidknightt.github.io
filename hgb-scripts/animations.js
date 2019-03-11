@@ -1,3 +1,5 @@
+var onMobile = false;
+
 function startItineraryTimeline() {
   const masterTimeline = new TimelineMax({
       onComplete: function () {
@@ -140,6 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileHero.addEventListener('touchstart', toggleGyroscope);
     mobileHero.addEventListener('touchmove', handleHeroMove);
     mobileHero.addEventListener('touchend', toggleGyroscope);
+    onMobile = true;
     return;
   } else {
     var bannerImage = document.querySelector('img.banner-image');
@@ -219,3 +222,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 })
+
+$(document).ready(function() {
+  $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
+    if (onMobile = true) {
+      return;
+    }
+    if ($('.tabs-menu-2.w-tab-menu').css('right') == '0px') {
+      $('.tabs-menu-2.w-tab-menu').animate({'right':'+=160px'});
+    }
+    });
+  }
+);
+
+$(document).ready(function() {
+  $('.tab-link-tab-1-2.w-inline-block.w-tab-link').click( function() {
+    if (onMobile = true) {
+      return;
+    }
+    if ($('.tabs-menu-2.w-tab-menu').css('right') == '160px'){
+      $('.tabs-menu-2.w-tab-menu').animate({'right':'+=-160px'});
+    }
+    });
+  }
+);
