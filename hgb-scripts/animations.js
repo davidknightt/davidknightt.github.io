@@ -82,7 +82,7 @@ function startNLPTimeline() {
   nlpTimeline.from('#nlp-airline .cursor-hand', 0.5, {x: 1100, y: 300, ease: Power1.easeOut}, 'airlineHandShown');
   nlpTimeline.to('#nlp-airline .channel-tools, #nlp-airline .cursor-hand', 0.3, {opacity: 0}, 'airlineHandShown+=1');
   nlpTimeline.from('#nlp-airline .nlp-box', 0.5, {opacity: 0});
-  nlpTimeline.staggerTo('#nlp-airline .nlp-box .text-reveal', 0.7, {scaleX: 0, transformOrigin: '100% 50%', ease:Power0.easeNone}, 0.3, 'airlineNLPShown');
+  nlpTimeline.staggerTo('#nlp-airline .nlp-box .text-reveal', 0.7, {scaleX: 0, svgOrigin: '891 0', ease:Power0.easeNone}, 0.3, 'airlineNLPShown');
   nlpTimeline.to('#nlp-airline', 2, {x: 4000, ease: Power1.easeIn}, 'airlineNLPShown+=2');
 
   // NLP Hotel
@@ -90,7 +90,7 @@ function startNLPTimeline() {
   nlpTimeline.from('#nlp-hotel .cursor-hand', 0.5, {x: 1100, y: 300, ease: Power1.easeOut}, 'hotelHandShown');
   nlpTimeline.to('#nlp-hotel .channel-tools, #nlp-hotel .cursor-hand', 0.3, {opacity: 0}, 'hotelHandShown+=1');
   nlpTimeline.from('#nlp-hotel .nlp-box', 0.5, {opacity: 0});
-  nlpTimeline.staggerTo('#nlp-hotel .nlp-box .text-reveal', 0.7, {scaleX: 0, transformOrigin: '100% 50%', ease: Power0.easeNone}, 'hotelNLPShown');
+  nlpTimeline.staggerTo('#nlp-hotel .nlp-box .text-reveal', 0.7, {scaleX: 0, svgOrigin: '891 0', ease: Power0.easeNone}, 'hotelNLPShown');
   nlpTimeline.to('#nlp-hotel', 2, {x: 4000, ease: Power1.easeIn}, 'hotelNLPShown+=2');
 
   // NLP OTA
@@ -98,7 +98,7 @@ function startNLPTimeline() {
   nlpTimeline.from('#nlp-ota .cursor-hand', 0.5, {x: 1100, y: 300, ease: Power1.easeOut}, 'otaHandShown');
   nlpTimeline.to('#nlp-ota .channel-tools, #nlp-ota .cursor-hand', 0.3, {opacity: 0}, 'otaHandShown+=1');
   nlpTimeline.from('#nlp-ota .nlp-box', 0.5, {opacity: 0});
-  nlpTimeline.staggerTo('#nlp-ota .nlp-box .text-reveal', 0.7, {scaleX: 0, transformOrigin: '100% 50%', ease:Power0.easeNone}, 0.3, 'otaNLPShown');
+  nlpTimeline.staggerTo('#nlp-ota .nlp-box .text-reveal', 0.7, {scaleX: 0, svgOrigin: '891 0', ease:Power0.easeNone}, 0.3, 'otaNLPShown');
   nlpTimeline.to('#nlp-ota', 2, {x: 4000, ease: Power1.easeIn}, 'otaNLPShown+=2');
 
   // Start reseting positions of first screen of timeline when NLP OTA animation begins
