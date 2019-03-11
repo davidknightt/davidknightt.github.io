@@ -786,6 +786,10 @@
     font-size: 20px;
     line-height: 20px;
   }
+  .nlp-animation-container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
   .div-block-9 {
     padding-right: 10px;
     padding-left: 10px;
@@ -815,6 +819,10 @@
   }
   .text-block-14 {
     font-size: 26px;
+  }
+  .div-block-19 {
+    padding-right: 0px;
+    padding-left: 0px;
   }
   .div-block-20 {
     padding-right: 20px;
@@ -997,8 +1005,8 @@
     padding-left: 0px;
   }
   .text-block-6 {
-    padding-right: 0px;
-    padding-left: 0px;
+    padding-right: 10px;
+    padding-left: 10px;
     font-size: 24px;
     line-height: 24px;
   }
@@ -1008,8 +1016,7 @@
     line-height: 24px;
   }
   .text-block-7 {
-    padding-top: 0px;
-    padding-bottom: 20px;
+    padding: 0px 10px 20px;
     font-size: 14px;
     line-height: 14px;
   }
@@ -1023,6 +1030,10 @@
     padding-right: 30px;
     padding-left: 30px;
     font-family: DinNextLTPro, sans-serif;
+  }
+  .nlp-animation-container {
+    padding-right: 20px;
+    padding-left: 20px;
   }
   .div-block-9 {
     padding-right: 10px;
@@ -1089,8 +1100,7 @@
     line-height: 24px;
   }
   .div-block-17 {
-    padding-top: 10px;
-    padding-bottom: 0px;
+    padding: 10px 10px 0px;
   }
   .ai-paas-desktop {
     display: none;
