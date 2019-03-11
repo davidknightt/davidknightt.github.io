@@ -466,6 +466,12 @@
   max-width: 33%;
 }
 
+.section-2 {
+  background-image: url('../images/Clouds-Background-Request-Demo-Page.svg');
+  background-position: 50% 100%;
+  background-size: cover;
+}
+
 .div-block-16 {
   padding-bottom: 40px;
 }
@@ -613,6 +619,8 @@
 }
 
 .footer-l-column {
+  padding-right: 0px;
+  padding-left: 0px;
   text-align: left;
 }
 
@@ -665,11 +673,13 @@
   text-decoration: none;
 }
 
+.footer-r-column {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
 .div-block-24 {
   max-width: 100%;
-  background-image: url('../images/Clouds-Background-Request-Demo-Page.svg');
-  background-position: 50% 100%;
-  background-size: cover;
 }
 
 .column {
@@ -703,6 +713,7 @@
 
 .rd-img {
   display: block;
+  width: 100%;
   margin: auto;
   padding-right: 10px;
   padding-bottom: 20px;
@@ -748,6 +759,11 @@
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.columns-2 {
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
 @media (max-width: 991px) {
@@ -836,6 +852,7 @@
     max-height: 50px;
   }
   .rd-img {
+    width: 80%;
     max-width: 80%;
   }
   .text-block-20 {
@@ -928,6 +945,10 @@
   .text-block-20 {
     font-size: 16px;
     line-height: 16px;
+  }
+  .columns-2 {
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }
 
@@ -1149,6 +1170,7 @@
     padding-bottom: 20px;
   }
   .rd-img {
+    width: 100%;
     max-width: 100%;
   }
   .footer-column {
@@ -1168,6 +1190,10 @@
   }
   .section-5 {
     overflow: hidden;
+  }
+  .columns-2 {
+    padding-right: 10px;
+    padding-left: 10px;
   }
 }
 
