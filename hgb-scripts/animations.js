@@ -107,6 +107,7 @@ function startNLPTimeline() {
   nlpTimeline.to('#nlp-airline .nlp-box', 0.0, {opacity: 0}, 'resetAnimationPoint');
 }
 
+
 var mobileHero = document.querySelector('.hero-image-container');
 window.USER_IS_TOUCHING = false;
 function handleOrientation(event) {
@@ -152,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }).then(function (svgStr) {
         var replacement = $(svgStr)
           .css("vertical-align", "middle") // NOTE: Web-Flow: need this CSS property to align with adjascent images
-          .css("max-width", "30%")
+          .css("max-width", "33.33333333%")
           .css("display", "inline-block")
           ;
         $(bannerImage).replaceWith(replacement);
@@ -219,27 +220,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 })
-
-// $(document).ready(function() {
-//   $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
-//     if ($.isMobile) {
-//       return;
-//     }
-//     if ($('.tabs-menu-2.w-tab-menu').css('right') == '0px') {
-//       $('.tabs-menu-2.w-tab-menu').animate({'right':'+=160px'});
-//     }
-//     });
-//   }
-// );
-
-// $(document).ready(function() {
-//   $('.tab-link-tab-1-2.w-inline-block.w-tab-link').click( function() {
-//     if ($.isMobile) {
-//       return;
-//     }
-//     if ($('.tabs-menu-2.w-tab-menu').css('right') == '160px'){
-//       $('.tabs-menu-2.w-tab-menu').animate({'right':'+=-160px'});
-//     }
-//     });
-//   }
-// );
