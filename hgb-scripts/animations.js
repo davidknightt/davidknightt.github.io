@@ -134,20 +134,20 @@ function handleHeroMove(event) {
         document.documentElement.style.setProperty('--backgroundXPosition', `${touchPositionPercentage}%`);
     }
 }
+// Commented out for Greg's Demo
+// function animateLightPath(path) {
+//     var offset = anime.setDashoffset(path);
+//     path.setAttribute('stroke-dashoffset', offset);
+//     anime({
+//       targets: path,
+//       delay: 4000,
+//       stroke: [ '#6098B1', '#FFFF00'],
+//       loop: true,
+//       direction: 'normal',
+//       easing: 'easeInOutSine',
 
-function animateLightPath(path) {
-    var offset = anime.setDashoffset(path);
-    path.setAttribute('stroke-dashoffset', offset);
-    anime({
-      targets: path,
-      delay: 4000,
-      stroke: [ '#6098B1', '#FFFF00'],
-      loop: true,
-      direction: 'normal',
-      easing: 'easeInOutSine',
-
-    })
-}
+//     })
+// }
 
 // LINK: https://stackoverflow.com/a/3540295
 $.isMobile = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
