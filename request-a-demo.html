@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--  Last Published: Sat Mar 09 2019 22:46:16 GMT+0000 (UTC)  -->
+<!--  Last Published: Mon Mar 11 2019 14:28:14 GMT+0000 (UTC)  -->
 <html data-wf-page="5c70424e2330edcc8818147f" data-wf-site="5c6d794f0cc9a807332f2437">
 <head>
   <meta charset="utf-8">
@@ -121,28 +121,34 @@ window.cookieconsent.initialise({
   <script>
 $(document).ready(function() {
   $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
-	if ($('.tabs-menu-2.w-tab-menu').css('right') == '160px')
-	{
-	   $('.tabs-menu-2.w-tab-menu').animate({'right':'+=0px'});
-	}
- 	else{
- 		$('.tabs-menu-2.w-tab-menu').animate({'right':'+=160px'});
- 	}
-  });
-});
+    if ($.isMobile) {
+      return;
+    } else {
+      if ($('.tabs-menu-2.w-tab-menu').css('right') == '160px') {
+        return;
+      } else {
+          $('.tabs-menu-2.w-tab-menu').animate({'right':'+=160px'});
+        }
+      }
+    });
+  }
+);
 </script>
   <script>
 $(document).ready(function() {
   $('.tab-link-tab-1-2.w-inline-block.w-tab-link').click( function() {
-	if ($('.tabs-menu-2.w-tab-menu').css('right') == '0px')
-	{
-	   $('.tabs-menu-2.w-tab-menu').animate({'right':'+=0px'});
-	}
- 	else{
- 		$('.tabs-menu-2.w-tab-menu').animate({'right':'+=-160px'});
- 	}
-  });
-});
+    if ($.isMobile) {
+      return;
+    } else {
+      if ($('.tabs-menu-2.w-tab-menu').css('right') == '0px'){
+        return;
+      } else {
+        $('.tabs-menu-2.w-tab-menu').animate({'right':'+=-160px'});
+        }
+      }
+    });
+  }
+);
 </script>
 </body>
 </html>
