@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--  Last Published: Mon Mar 11 2019 16:19:29 GMT+0000 (UTC)  -->
+<!--  Last Published: Mon Mar 11 2019 16:39:01 GMT+0000 (UTC)  -->
 <html data-wf-page="5c70424e2330edcc8818147f" data-wf-site="5c6d794f0cc9a807332f2437">
 <head>
   <meta charset="utf-8">
@@ -118,30 +118,26 @@ window.cookieconsent.initialise({
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TimelineMax.min.js"></script>
   <script src="hgb-scripts/animations.js" type="text/javascript"></script>
   <script>
-  $(document).ready(function() {
-    $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
-      if ($.isMobile) {
-        return;
-      }
+$(document).ready(function() {
+  $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
+    if ($.isMobile) {
       if ($('.tabs-menu-2.w-tab-menu').css('right') == '0px') {
         $('.tabs-menu-2.w-tab-menu').animate({'right':'+=160px'});
       }
-      });
     }
-  );
-  </script>
+  });
+});
+</script>
   <script>
-  $(document).ready(function() {
-    $('.tab-link-tab-1-2.w-inline-block.w-tab-link').click( function() {
-      if ($.isMobile) {
-        return;
-      }
-      if ($('.tabs-menu-2.w-tab-menu').css('right') == '160px'){
+$(document).ready(function() {
+  $('.tab-link-tab-1-2.w-inline-block.w-tab-link').click( function() {
+    if ($.isMobile) {
+      if ($('.tabs-menu-2.w-tab-menu').css('right') == '160px') {
         $('.tabs-menu-2.w-tab-menu').animate({'right':'+=-160px'});
       }
-      });
     }
-  );
-  </script>
+  });
+});
+</script>
 </body>
 </html>
