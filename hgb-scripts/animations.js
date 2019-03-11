@@ -107,6 +107,9 @@ function startNLPTimeline() {
   nlpTimeline.to('#nlp-airline .nlp-box', 0.0, {opacity: 0}, 'resetAnimationPoint');
 }
 
+document.getElementById('control').addEventListener('click', function() {
+  nlpTimeline.paused(!nlpTimeline.paused());
+})
 
 var mobileHero = document.querySelector('.hero-image-container');
 window.USER_IS_TOUCHING = false;
@@ -130,6 +133,20 @@ function handleHeroMove(event) {
         var touchPositionPercentage = Math.floor((touch.pageX/event.target.offsetWidth) * 100);
         document.documentElement.style.setProperty('--backgroundXPosition', `${touchPositionPercentage}%`);
     }
+}
+
+function animateLightPath(path) {
+    var offset = anime.setDashoffset(path);
+    path.setAttribute('stroke-dashoffset', offset);
+    anime({
+      targets: path,
+      delay: 4000,
+      stroke: [ '#6098B1', '#FFFF00'],
+      loop: true,
+      direction: 'normal',
+      easing: 'easeInOutSine',
+
+    })
 }
 
 // LINK: https://stackoverflow.com/a/3540295
@@ -156,23 +173,29 @@ document.addEventListener("DOMContentLoaded", function () {
           .css("max-width", "33.33333333%")
           .css("display", "inline-block")
           ;
+          
         $(bannerImage).replaceWith(replacement);
         var pathEls = document.querySelectorAll('svg .circuit-wire path');
+        console.log(pathEls[1])
         pathEls.forEach((path, index) => {
           var offset = anime.setDashoffset(path);
           path.setAttribute('stroke-dashoffset', offset);
           anime({
             targets: path,
-            strokeDashoffset: [offset, 0],
+            strokeDashoffset: [offset, 1],
             duration: anime.random(3000, 3000),
             delay: anime.random(500, 500),
             direction: 'normal',
             easing: 'easeInOutSine',
             autoplay: true,
-            loop: false
+            loop: false,
           });
-        });
-      });
+        })
+
+        animateLightPath(pathEls[(Math.floor(Math.random(pathEls.length)))]);
+ 
+ 
+    })
   
     // Queue up resources for itinerary animation
     var itinGenCon = document.querySelector('.itin-gen-animation-container');
