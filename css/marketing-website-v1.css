@@ -485,8 +485,10 @@
   padding-bottom: 40px;
 }
 
-.image-4 {
+.omnichannel-desktop {
   width: 100%;
+  padding-right: 40px;
+  padding-left: 40px;
   text-align: center;
 }
 
@@ -792,6 +794,10 @@
   text-align: center;
 }
 
+.omnichannel-mobile {
+  display: none;
+}
+
 @media (max-width: 991px) {
   .nav-logo-holder {
     padding-left: 20px;
@@ -828,6 +834,9 @@
     font-size: 20px;
     line-height: 20px;
   }
+  .text-block-7.sub-header-text {
+    padding-bottom: 30px;
+  }
   .nlp-animation-container {
     padding-right: 20px;
     padding-left: 20px;
@@ -859,6 +868,10 @@
     padding-bottom: 20px;
     padding-left: 10px;
   }
+  .omnichannel-desktop {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
   .text-block-14 {
     font-size: 26px;
   }
@@ -878,8 +891,7 @@
     max-height: 50px;
   }
   .rd-img {
-    width: 80%;
-    max-width: 80%;
+    width: 75%;
   }
   .text-block-20 {
     padding-bottom: 10px;
@@ -931,6 +943,7 @@
   }
   .text-block-7.sub-header-text {
     padding-right: 10px;
+    padding-bottom: 20px;
     padding-left: 10px;
   }
   .text-block-11 {
@@ -1035,6 +1048,12 @@
     -ms-flex-line-pack: stretch;
     align-content: stretch;
   }
+  .tabs-menu-2.squeeze {
+    position: absolute;
+  }
+  .tabs-menu-2.squeeze.tab-menu-mobile {
+    position: absolute;
+  }
   .tab-item {
     max-width: 100%;
     margin-right: 20px;
@@ -1076,8 +1095,9 @@
     line-height: 14px;
   }
   .text-block-7.sub-header-text {
-    padding-right: 0px;
-    padding-left: 0px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
     font-size: 14px;
     line-height: 14px;
   }
@@ -1130,6 +1150,9 @@
   .div-block-15 {
     padding-right: 10px;
     padding-left: 10px;
+  }
+  .omnichannel-desktop {
+    display: none;
   }
   .tab-icons {
     padding-bottom: 20px;
@@ -1236,6 +1259,17 @@
   .error-message {
     margin-right: 0px;
     margin-left: 0px;
+  }
+  .omnichannel-mobile {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .tab-content-mobile {
+    padding-top: 100px;
+  }
+  .tabs-content {
+    padding-top: 90px;
   }
 }
 

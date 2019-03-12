@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="173px" height="168px" viewBox="0 0 173 168" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Group 11 Copy 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-10.7%" y="-15.7%" width="121.3%" height="131.4%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.305589586   0 0 0 0 0.600896776   0 0 0 0 0.705547631  0 0 0 0.502048733 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Marketing-Website-V0.9" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-2560-TMC" transform="translate(-1190.000000, -1033.000000)">
+            <g id="Group-11-Copy-3" transform="translate(1189.000000, 1035.000000)">
+                <g id="Group-10" transform="translate(9.000000, 0.000000)">
+                    <g id="Group-8" fill="#E7F2FF">
+                        <circle id="Oval-Copy-3" cx="81.6281995" cy="81.6281995" r="68.8737933"></circle>
+                    </g>
+                    <g id="Group-9" filter="url(#filter-1)" transform="translate(45.807488, 43.364981)" fill="#02637B">
+                        <polygon id="Rectangle" transform="translate(22.957931, 28.916499) rotate(-52.000000) translate(-22.957931, -28.916499) " points="18.4938889 3.40768679 27.4219733 3.40768679 27.4219733 54.4253115 18.4938889 54.4253115"></polygon>
+                        <polygon id="Rectangle-Copy-3" transform="translate(49.594181, 25.508812) rotate(-315.000000) translate(-49.594181, -25.508812) " points="47.0433002 -7.6526437 52.1450627 -7.6526437 52.1450627 58.6702684 47.0433002 58.6702684"></polygon>
+                    </g>
+                </g>
+                <g id="Group-12">
+                    <path d="M90.9943609,163.256399 C135.73254,163.256399 172,126.710209 172,81.6281995 C172,36.5461898 135.73254,0 90.9943609,0 C46.2561818,0 9.9887218,36.5461898 9.9887218,81.6281995" id="Shape" stroke="#6098B1" stroke-width="4" stroke-dasharray="8,6"></path>
+                    <polygon id="Triangle" fill="#6098B1" transform="translate(9.988722, 86.128200) rotate(-180.000000) translate(-9.988722, -86.128200) " points="9.9887218 81.6281995 18.9887218 90.6281995 0.988721805 90.6281995"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

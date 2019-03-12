@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--  Last Published: Tue Mar 12 2019 15:12:21 GMT+0000 (UTC)  -->
+<!--  Last Published: Tue Mar 12 2019 19:10:10 GMT+0000 (UTC)  -->
 <html data-wf-page="5c6d794f0cc9a8ca592f2438" data-wf-site="5c6d794f0cc9a807332f2437">
 <head>
   <meta charset="utf-8">
@@ -30,7 +30,7 @@
   <style type="text/css"> @media (max-width: 479px) {
   	 .tabs-menu-2 {
          white-space: nowrap;
-      	 right: 0px;
+      	 left: inital;
   }
     .fluid-custom-container .squeeze.w-tab-menu {
     padding-left: 10px;
@@ -100,13 +100,13 @@ window.cookieconsent.initialise({
           <div class="text-block-14">Airlines, Hotels &amp; Online Travel Agencies</div>
         </a>
       </div>
-      <div class="w-tab-content">
+      <div class="tabs-content w-tab-content">
         <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
           <div class="tab-icons squeeze">
             <div class="tab-item"><img src="images/Agent.svg" alt="" class="tab-item-image">
               <div class="tab-item-text">Improve client-agent interactions by offering higher quality results much faster</div>
             </div>
-            <div class="tab-item"><img src="images/Clock_1.svg" alt="" class="tab-item-image">
+            <div class="tab-item"><img src="images/Clock.svg" alt="" class="tab-item-image">
               <div class="tab-item-text">Reduce the average handle time of your agents when generating an itinerary</div>
             </div>
             <div class="tab-item"><img src="images/Tablet.svg" alt="" class="tab-item-image">
@@ -118,7 +118,7 @@ window.cookieconsent.initialise({
               <div class="text-block-6 header-text">Handle requests via any communication channel</div>
               <div class="text-block-7 sub-header-text">Itinerary generation, modification, and booking all with the click of a button</div>
             </div>
-            <div class="itin-gen-animation-container squeeze"><img src="images/Screen-Shot-2019-02-20-at-2.27.44-PM.png" srcset="images/Screen-Shot-2019-02-20-at-2.27.44-PM-p-500.png 500w, images/Screen-Shot-2019-02-20-at-2.27.44-PM-p-800.png 800w, images/Screen-Shot-2019-02-20-at-2.27.44-PM-p-1080.png 1080w, images/Screen-Shot-2019-02-20-at-2.27.44-PM-p-1600.png 1600w, images/Screen-Shot-2019-02-20-at-2.27.44-PM-p-2000.png 2000w, images/Screen-Shot-2019-02-20-at-2.27.44-PM.png 2532w" sizes="(max-width: 991px) 100vw, 99vw" alt="" class="image-4"></div>
+            <div class="itin-gen-animation-container squeeze"><img src="images/Omnichannel-1.svg" alt="" class="omnichannel-desktop"><img src="images/Omnichannel_Mobile.svg" alt="" class="omnichannel-mobile"></div>
             <div class="div-block-7 squeeze">
               <div class="text-block-8">Cost-Per-Itinerary (CPI) Pricing Model</div>
             </div>
@@ -126,13 +126,13 @@ window.cookieconsent.initialise({
         </div>
         <div data-w-tab="Tab 2" class="w-tab-pane">
           <div class="tab-icons squeeze">
-            <div class="tab-item"><img src="images/Woman-Voice-UI.svg" alt="" class="tab-item-image">
+            <div class="tab-item"><img src="images/NLP.svg" alt="" class="tab-item-image">
               <div class="tab-item-text">White-labeled natural language search for your online booking tool</div>
             </div>
             <div class="tab-item"><img src="images/Post-Booking-Changes.svg" alt="" class="tab-item-image">
               <div class="tab-item-text">Empower your customers to make post-booking changes without the need to speak to an agent</div>
             </div>
-            <div class="tab-item"><img src="images/Departures-Board.svg" alt="" class="tab-item-image">
+            <div class="tab-item"><img src="images/Flights-Cancelled.svg" alt="" class="tab-item-image">
               <div class="tab-item-text">Provide your travelers with better options when things go wrong</div>
             </div>
           </div>
@@ -195,11 +195,22 @@ window.cookieconsent.initialise({
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TimelineMax.min.js"></script>
   <script src="hgb-scripts/animations.js" type="text/javascript"></script>
   <script>
+  //Browser calculation
+  //https://stackoverflow.com/questions/9792366/how-can-i-determine-the-distance-of-an-object-to-the-right-browser-window-border
+  $.marginLength = $(window).width() - ($('.tabs-menu-2.w-tab-menu').offset().left + $('.tabs-menu-2.w-tab-menu').width());
+  //$.fn.log = function() {
+  //  console.log.apply(console, this);
+  //  return this;
+  //};
+  $($.marginLength).log();
+  var marginLength = Math.round($.marginLength);
+</script>
+  <script>
 $(document).ready(function() {
   $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
     if ($.isMobile) {
-      if ($('.tabs-menu-2.w-tab-menu').css('right') == '0px') {
-        $('.tabs-menu-2.w-tab-menu').animate({'right':'+=160px'});
+      if ($('.tabs-menu-2.w-tab-menu').css('left') == 'initial') {
+        $('.tabs-menu-2.w-tab-menu').animate({'left' :'+=-'+marginLength});
       }
     }
   });
@@ -209,8 +220,8 @@ $(document).ready(function() {
 $(document).ready(function() {
   $('.tab-link-tab-1-2.w-inline-block.w-tab-link').click( function() {
     if ($.isMobile) {
-      if ($('.tabs-menu-2.w-tab-menu').css('right') == '160px') {
-        $('.tabs-menu-2.w-tab-menu').animate({'right':'+=-160px'});
+      if ($('.tabs-menu-2.w-tab-menu').css('left') == +marginLength) {
+        $('.tabs-menu-2.w-tab-menu').animate({'left':'+='+marginLength});
       }
     }
   });
