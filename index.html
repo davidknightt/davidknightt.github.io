@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--  Last Published: Tue Mar 12 2019 19:15:31 GMT+0000 (UTC)  -->
+<!--  Last Published: Tue Mar 12 2019 20:31:03 GMT+0000 (UTC)  -->
 <html data-wf-page="5c6d794f0cc9a8ca592f2438" data-wf-site="5c6d794f0cc9a807332f2437">
 <head>
   <meta charset="utf-8">
@@ -194,9 +194,7 @@ window.cookieconsent.initialise({
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TimelineMax.min.js"></script>
   <script src="hgb-scripts/animations.js" type="text/javascript"></script>
-
   <script>
-
   //Browser calculation
   //https://stackoverflow.com/questions/9792366/how-can-i-determine-the-distance-of-an-object-to-the-right-browser-window-border
   $.marginLength = $(window).width() - ($('.tabs-menu-2.w-tab-menu').offset().left + $('.tabs-menu-2.w-tab-menu').width());
@@ -205,23 +203,23 @@ window.cookieconsent.initialise({
   //  return this;
   //};
   //$($.marginLength).log();
-  var marginLength = Math.round($.marginLength) + 'px';
-
+  var marginLength = Math.round($.marginLength);
   $(document).ready(function() {
     $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
       if ($.isMobile) {
-        if ($('.tabs-menu-2.squeeze.w-tab-menu').css('left') == '0px') {
-          $('.tabs-menu-2.squeeze.w-tab-menu').animate({'left':'+='+marginLength});
+        console.log(marginLength);
+        if ($('.tabs-menu-2.w-tab-menu').css('left') == '0px') {
+          $('.tabs-menu-2.w-tab-menu').animate({'left':'+=-'+marginLength});
         }
       }
     });
   });
-
   $(document).ready(function() {
     $('.tab-link-tab-1-2.w-inline-block.w-tab-link').click( function() {
       if ($.isMobile) {
-        if ($('.tabs-menu-2.squeeze.w-tab-menu').css('left') == '-'+marginLength) {
-          $('.tabs-menu-2.squeeze.w-tab-menu').animate({'left':'+=-'+marginLength});
+        console.log('-'+marginLength);
+        if ($('.tabs-menu-2.w-tab-menu').css('left') == '-'+marginLength+'px') {
+          $('.tabs-menu-2.w-tab-menu').animate({'left':'+='+marginLength});
         }
       }
     });
