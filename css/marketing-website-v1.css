@@ -324,6 +324,10 @@
   text-align: center;
 }
 
+.nlp-animation-container.squeeze {
+  background-color: transparent;
+}
+
 .button {
   text-align: left;
 }
