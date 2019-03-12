@@ -1283,8 +1283,6 @@
   .hero-image-container {
     display: block;
     overflow: hidden;
-    min-height: 400px;
-    min-width: 800px;
     background-image: url('../images/Hero-Full-Image.jpg');
     background-position: 50% 50%;
     background-size: cover;
