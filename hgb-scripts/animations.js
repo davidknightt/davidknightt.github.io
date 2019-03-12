@@ -105,10 +105,6 @@ function startNLPTimeline() {
   nlpTimeline.to('#nlp-airline', 0.0, {x: 0, y: 0, zIndex: 70}, 'resetAnimationPoint');
   nlpTimeline.to('#nlp-airline .channel-tools', 0.0, {opacity: 0}, 'resetAnimationPoint');
   nlpTimeline.to('#nlp-airline .nlp-box', 0.0, {x: 1000, opacity: 0}, 'resetAnimationPoint');
-
-  document.getElementById('control').addEventListener('click', function() {
-    nlpTimeline.paused(!nlpTimeline.paused());
-  })
 }
 
 var mobileHero = document.querySelector('.hero-image-container');
@@ -135,25 +131,26 @@ function handleHeroMove(event) {
     }
 }
 
-function randomPath(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
+// Commented out for Greg's demo
+// function randomPath(max) {
+//   return Math.floor(Math.random() * Math.floor(max));
+// }
 
-function animateLightPath(lightPaths, path) {
-  var allPaths = lightPaths;
-  var offset = anime.setDashoffset(path);
-  path.setAttribute('stroke-dashoffset', offset);
-  anime({
-    targets: path,
-    stroke: [ '#6098B1', '#FFFF00'],
-    loop: false,
-    direction: 'alternate',
-    easing: 'easeInSine',
-    complete: function() {
-      animateLightPath(allPaths, allPaths[randomPath(allPaths.length -1)])
-    }
-  })
-}
+// function animateLightPath(lightPaths, path) {
+//   var allPaths = lightPaths;
+//   var offset = anime.setDashoffset(path);
+//   path.setAttribute('stroke-dashoffset', offset);
+//   anime({
+//     targets: path,
+//     stroke: [ '#6098B1', '#FFFF00'],
+//     loop: false,
+//     direction: 'alternate',
+//     easing: 'easeInSine',
+//     complete: function() {
+//       animateLightPath(allPaths, allPaths[randomPath(allPaths.length -1)])
+//     }
+//   })
+// }
 
 // LINK: https://stackoverflow.com/a/3540295
 $.isMobile = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
