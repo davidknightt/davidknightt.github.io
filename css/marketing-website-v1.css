@@ -775,6 +775,23 @@
   padding-left: 30px;
 }
 
+.text-block-21 {
+  font-family: DinNextLTPro, sans-serif;
+  color: hsla(191.84210526315786, 100.00%, 14.90%, 1.00);
+  font-size: 18px;
+  line-height: 18px;
+}
+
+.success-message {
+  background-color: transparent;
+}
+
+.error-message {
+  margin-right: 0px;
+  margin-left: 0px;
+  text-align: center;
+}
+
 @media (max-width: 991px) {
   .nav-logo-holder {
     padding-left: 20px;
@@ -880,6 +897,10 @@
   .icon-2 {
     display: none;
   }
+  .error-message {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -958,6 +979,10 @@
   .columns-2 {
     padding-right: 20px;
     padding-left: 20px;
+  }
+  .error-message {
+    margin-right: 0px;
+    margin-left: 0px;
   }
 }
 
@@ -1203,6 +1228,14 @@
   .columns-2 {
     padding-right: 10px;
     padding-left: 10px;
+  }
+  .text-block-21 {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .error-message {
+    margin-right: 0px;
+    margin-left: 0px;
   }
 }
 
