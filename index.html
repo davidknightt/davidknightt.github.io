@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--  Last Published: Tue Mar 12 2019 20:31:03 GMT+0000 (UTC)  -->
+<!--  Last Published: Tue Mar 12 2019 21:16:41 GMT+0000 (UTC)  -->
 <html data-wf-page="5c6d794f0cc9a8ca592f2438" data-wf-site="5c6d794f0cc9a807332f2437">
 <head>
   <meta charset="utf-8">
@@ -31,6 +31,7 @@
   	 .tabs-menu-2 {
          white-space: nowrap;
       	 left: 0px;
+	     z-index: 100;
   }
     .fluid-custom-container .squeeze.w-tab-menu {
     padding-left: 10px;
@@ -195,31 +196,30 @@ window.cookieconsent.initialise({
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TimelineMax.min.js"></script>
   <script src="hgb-scripts/animations.js" type="text/javascript"></script>
   <script>
-  //Browser calculation
-  //https://stackoverflow.com/questions/9792366/how-can-i-determine-the-distance-of-an-object-to-the-right-browser-window-border
-  $.marginLength = $(window).width() - ($('.tabs-menu-2.w-tab-menu').offset().left + $('.tabs-menu-2.w-tab-menu').width());
-  //$.fn.log = function() {
-  //  console.log.apply(console, this);
-  //  return this;
-  //};
-  //$($.marginLength).log();
-  var marginLength = Math.round($.marginLength);
   $(document).ready(function() {
+    //Browser calculation
+    //https://stackoverflow.com/questions/9792366/how-can-i-determine-the-distance-of-an-object-to-the-right-browser-window-border
+    $.marginLength = $(window).width() - ($('.tabs-menu-2.w-tab-menu').offset().left + $('.tabs-menu-2.w-tab-menu').width());
+    //$.fn.log = function() {
+    //  console.log.apply(console, this);
+    //  return this;
+    //};
+    //$($.marginLength).log();
+    var marginLength = Math.round($.marginLength);
+    var marginLengthPadding = marginLength - 15;
     $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
       if ($.isMobile) {
         console.log(marginLength);
         if ($('.tabs-menu-2.w-tab-menu').css('left') == '0px') {
-          $('.tabs-menu-2.w-tab-menu').animate({'left':'+=-'+marginLength});
+          $('.tabs-menu-2.w-tab-menu').animate({'left':'+='+marginLengthPadding});
         }
       }
     });
-  });
-  $(document).ready(function() {
     $('.tab-link-tab-1-2.w-inline-block.w-tab-link').click( function() {
       if ($.isMobile) {
-        console.log('-'+marginLength);
-        if ($('.tabs-menu-2.w-tab-menu').css('left') == '-'+marginLength+'px') {
-          $('.tabs-menu-2.w-tab-menu').animate({'left':'+='+marginLength});
+        console.log(marginLength);
+        if ($('.tabs-menu-2.w-tab-menu').css('left') == marginLengthPadding+'px') {
+          $('.tabs-menu-2.w-tab-menu').animate({'left':'-='+marginLengthPadding});
         }
       }
     });

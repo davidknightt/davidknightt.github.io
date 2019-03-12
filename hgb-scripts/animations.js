@@ -157,10 +157,10 @@ $.isMobile = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.t
 
 document.addEventListener("DOMContentLoaded", function () {
   if ($.isMobile) {
-    // window.addEventListener('deviceorientation', handleOrientation);
-    // mobileHero.addEventListener('touchstart', toggleGyroscope);
-    // mobileHero.addEventListener('touchmove', handleHeroMove);
-    // mobileHero.addEventListener('touchend', toggleGyroscope);
+    window.addEventListener('deviceorientation', handleOrientation);
+    mobileHero.addEventListener('touchstart', toggleGyroscope);
+    mobileHero.addEventListener('touchmove', handleHeroMove);
+    mobileHero.addEventListener('touchend', toggleGyroscope);
     return;
   } else {
     var bannerImage = document.querySelector('img.banner-image');

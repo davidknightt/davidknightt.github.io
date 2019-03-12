@@ -1148,6 +1148,7 @@
     display: none;
   }
   .div-block-15 {
+    display: block;
     padding-right: 10px;
     padding-left: 10px;
   }
@@ -1159,6 +1160,10 @@
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+  }
+  .section-3 {
+    background-image: url('../images/Hero-Background.svg');
+    background-size: cover;
   }
   .hero-container {
     background-position: 50% 50%;
