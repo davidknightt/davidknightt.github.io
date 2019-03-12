@@ -203,13 +203,13 @@ window.cookieconsent.initialise({
   //  return this;
   //};
   //$($.marginLength).log();
-  var marginLength = Math.round($.marginLength);
+  var marginLength = Math.round($.marginLength) + 'px';
 </script>
   <script>
 $(document).ready(function() {
   $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
     if ($.isMobile) {
-      if ($('.tabs-menu-2.w-tab-menu').css('left') == '0') {
+      if ($('.tabs-menu-2.w-tab-menu').css('left') == '0px') {
         $('.tabs-menu-2.w-tab-menu').animate({'left' :'+=-'+marginLength});
       }
     }
@@ -220,7 +220,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $('.tab-link-tab-1-2.w-inline-block.w-tab-link').click( function() {
     if ($.isMobile) {
-      if ($('.tabs-menu-2.w-tab-menu').css('left') == +marginLength) {
+      if ($('.tabs-menu-2.w-tab-menu').css('left') == '-'+marginLength) {
         $('.tabs-menu-2.w-tab-menu').animate({'left':'+='+marginLength});
       }
     }
