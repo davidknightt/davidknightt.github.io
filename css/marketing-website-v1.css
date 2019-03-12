@@ -266,7 +266,7 @@
   width: 100%;
   padding-right: 30px;
   padding-left: 30px;
-  background-color: #e6e6e6;
+  background-color: hsla(189.2307692307692, 52.00%, 95.10%, 1.00);
   opacity: 1;
 }
 
@@ -737,9 +737,10 @@
 
 .text-block-20 {
   padding-bottom: 20px;
-  font-family: 'DinNextLTPro Condensed', sans-serif;
+  font-family: DinNextLTPro, sans-serif;
   color: hsla(191.84210526315786, 100.00%, 14.90%, 1.00);
   font-size: 18px;
+  font-weight: 300;
 }
 
 .ai-paas-mobile {
@@ -1067,7 +1068,7 @@
     padding-left: 20px;
   }
   .tab-item-image {
-    height: 70px;
+    height: 90px;
   }
   .tab-item-text {
     padding-top: 10px;

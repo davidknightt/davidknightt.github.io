@@ -177,6 +177,7 @@ function randomPath(max) {
 
 function animateLightPath(lightPaths, path) {
   var allPaths = lightPaths;
+  debugger;
   var lightNode = document.getElementById("light-node");
   lightNode.setAttribute("fill", "#ccff00");
   let circuitPath = anime.path(path);
