@@ -82,7 +82,7 @@ function startNLPTimeline() {
   nlpTimeline.from('#nlp-airline .cursor-hand', 0.5, {x: 1100, y: 300, ease: Power1.easeOut}, 'airlineHandShown');
   nlpTimeline.to('#nlp-airline .channel-tools, #nlp-airline .cursor-hand', 0.3, {opacity: 0}, 'airlineHandShown+=1');
   nlpTimeline.from('#nlp-airline .nlp-box', 0.5, {opacity: 0});
-  nlpTimeline.staggerTo('#nlp-airline .nlp-box .text-reveal', 0.7, {scaleX: 0, svgOrigin: '891 0', ease:Power0.easeNone}, 0.3, 'airlineNLPShown');
+  nlpTimeline.staggerTo('#nlp-airline .nlp-box .text-reveal', 0.7, { scaleX: 0, svgOrigin: '891 0', ease:Power0.easeNone}, 0.3, 'airlineNLPShown');
   nlpTimeline.to('#nlp-airline', 2, {x: 4000, ease: Power1.easeIn}, 'airlineNLPShown+=2');
 
   // NLP Hotel
@@ -90,7 +90,7 @@ function startNLPTimeline() {
   nlpTimeline.from('#nlp-hotel .cursor-hand', 0.5, {x: 1100, y: 300, ease: Power1.easeOut}, 'hotelHandShown');
   nlpTimeline.to('#nlp-hotel .channel-tools, #nlp-hotel .cursor-hand', 0.3, {opacity: 0}, 'hotelHandShown+=1');
   nlpTimeline.from('#nlp-hotel .nlp-box', 0.5, {opacity: 0});
-  nlpTimeline.staggerTo('#nlp-hotel .nlp-box .text-reveal', 0.7, {scaleX: 0, svgOrigin: '891 0', ease: Power0.easeNone}, 'hotelNLPShown');
+  nlpTimeline.staggerTo('#nlp-hotel .nlp-box .text-reveal', 0.7, {scaleX: 0, svgOrigin: '891 0', ease: Power0.easeNone}, 0.3, 'hotelNLPShown');
   nlpTimeline.to('#nlp-hotel', 2, {x: 4000, ease: Power1.easeIn}, 'hotelNLPShown+=2');
 
   // NLP OTA
@@ -102,14 +102,14 @@ function startNLPTimeline() {
   nlpTimeline.to('#nlp-ota', 2, {x: 4000, ease: Power1.easeIn}, 'otaNLPShown+=2');
 
   // Start reseting positions of first screen of timeline when NLP OTA animation begins
-  nlpTimeline.to('#nlp-airline', 0.0, {x: 0, zIndex: 70}, 'resetAnimationPoint');
+  nlpTimeline.to('#nlp-airline', 0.0, {x: 0, y: 0, zIndex: 70}, 'resetAnimationPoint');
   nlpTimeline.to('#nlp-airline .channel-tools', 0.0, {opacity: 0}, 'resetAnimationPoint');
-  nlpTimeline.to('#nlp-airline .nlp-box', 0.0, {opacity: 0}, 'resetAnimationPoint');
-}
+  nlpTimeline.to('#nlp-airline .nlp-box', 0.0, {x: 1000, opacity: 0}, 'resetAnimationPoint');
 
-document.getElementById('control').addEventListener('click', function() {
-  nlpTimeline.paused(!nlpTimeline.paused());
-})
+  document.getElementById('control').addEventListener('click', function() {
+    nlpTimeline.paused(!nlpTimeline.paused());
+  })
+}
 
 var mobileHero = document.querySelector('.hero-image-container');
 window.USER_IS_TOUCHING = false;
@@ -134,20 +134,26 @@ function handleHeroMove(event) {
         document.documentElement.style.setProperty('--backgroundXPosition', `${touchPositionPercentage}%`);
     }
 }
-// Commented out for Greg's Demo
-// function animateLightPath(path) {
-//     var offset = anime.setDashoffset(path);
-//     path.setAttribute('stroke-dashoffset', offset);
-//     anime({
-//       targets: path,
-//       delay: 4000,
-//       stroke: [ '#6098B1', '#FFFF00'],
-//       loop: true,
-//       direction: 'normal',
-//       easing: 'easeInOutSine',
 
-//     })
-// }
+function randomPath(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+function animateLightPath(lightPaths, path) {
+  var allPaths = lightPaths;
+  var offset = anime.setDashoffset(path);
+  path.setAttribute('stroke-dashoffset', offset);
+  anime({
+    targets: path,
+    stroke: [ '#6098B1', '#FFFF00'],
+    loop: false,
+    direction: 'alternate',
+    easing: 'easeInSine',
+    complete: function() {
+      animateLightPath(allPaths, allPaths[randomPath(allPaths.length -1)])
+    }
+  })
+}
 
 // LINK: https://stackoverflow.com/a/3540295
 $.isMobile = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
@@ -170,31 +176,46 @@ document.addEventListener("DOMContentLoaded", function () {
       }).then(function (svgStr) {
         var replacement = $(svgStr)
           .css("vertical-align", "middle") // NOTE: Web-Flow: need this CSS property to align with adjascent images
-          .css("max-width", "33.33333333%")
+          .css("max-width", "30%")
           .css("display", "inline-block")
           ;
           
         $(bannerImage).replaceWith(replacement);
-        var pathEls = document.querySelectorAll('svg .circuit-wire path');
-        console.log(pathEls[1])
-        pathEls.forEach((path, index) => {
+        var circuitWires = document.querySelectorAll('svg .circuit-wire path');
+        circuitWires.forEach((path, index) => {
           var offset = anime.setDashoffset(path);
           path.setAttribute('stroke-dashoffset', offset);
-          anime({
-            targets: path,
-            strokeDashoffset: [offset, 1],
-            duration: anime.random(3000, 3000),
-            delay: anime.random(500, 500),
-            direction: 'normal',
-            easing: 'easeInOutSine',
-            autoplay: true,
-            loop: false,
-          });
+          var animeSettings;
+          if(index === circuitWires.length - 1) {
+            animeSettings = {
+              targets: path,
+              strokeDashoffset: [offset, 1],
+              duration: anime.random(3000, 3000),
+              delay: anime.random(500, 500),
+              endDelay: 1000,
+              direction: 'normal',
+              easing: 'easeInOutSine',
+              autoplay: true,
+              loop: false,
+              complete: function(anim) {
+                animateLightPath(circuitWires, circuitWires[randomPath(circuitWires.length -1)]);
+              }
+            }
+          } else {
+            animeSettings = {
+              targets: path,
+              strokeDashoffset: [offset, 1],
+              duration: anime.random(3000, 3000),
+              delay: anime.random(500, 500),
+              endDelay: 1000,
+              direction: 'normal',
+              easing: 'easeInOutSine',
+              autoplay: true,
+              loop: false
+            }
+          }
+          anime(animeSettings);
         })
-
-        animateLightPath(pathEls[(Math.floor(Math.random(pathEls.length)))]);
- 
- 
     })
   
     // Queue up resources for itinerary animation
