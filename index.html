@@ -30,7 +30,7 @@
   <style type="text/css"> @media (max-width: 479px) {
   	 .tabs-menu-2 {
          white-space: nowrap;
-      	 left: initial;
+      	 left: 0;
   }
     .fluid-custom-container .squeeze.w-tab-menu {
     padding-left: 10px;
@@ -209,7 +209,7 @@ window.cookieconsent.initialise({
 $(document).ready(function() {
   $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
     if ($.isMobile) {
-      if ($('.tabs-menu-2.w-tab-menu').css('left') == 'initial') {
+      if ($('.tabs-menu-2.w-tab-menu').css('left') == '0') {
         $('.tabs-menu-2.w-tab-menu').animate({'left' :'+=-'+marginLength});
       }
     }
