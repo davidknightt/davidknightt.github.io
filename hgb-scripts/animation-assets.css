@@ -3,7 +3,6 @@
   overflow: hidden;
 }
 .itin-gen-animation-container.active {
-  background: hsla(189.2307692307692, 52.00%, 95.10%, 1.00); 
   min-height: 600px;
 }
 #iPhone {
