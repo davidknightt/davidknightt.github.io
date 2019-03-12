@@ -194,7 +194,9 @@ window.cookieconsent.initialise({
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TimelineMax.min.js"></script>
   <script src="hgb-scripts/animations.js" type="text/javascript"></script>
+
   <script>
+
   //Browser calculation
   //https://stackoverflow.com/questions/9792366/how-can-i-determine-the-distance-of-an-object-to-the-right-browser-window-border
   $.marginLength = $(window).width() - ($('.tabs-menu-2.w-tab-menu').offset().left + $('.tabs-menu-2.w-tab-menu').width());
@@ -204,28 +206,26 @@ window.cookieconsent.initialise({
   //};
   //$($.marginLength).log();
   var marginLength = Math.round($.marginLength) + 'px';
-</script>
-  <script>
-$(document).ready(function() {
-  $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
-    if ($.isMobile) {
-      if ($('.tabs-menu-2.squeeze.w-tab-menu').css('left') == '0px') {
-        $('.tabs-menu-2.squeeze.w-tab-menu').animate({'left':'+='+marginLength});
+
+  $(document).ready(function() {
+    $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
+      if ($.isMobile) {
+        if ($('.tabs-menu-2.squeeze.w-tab-menu').css('left') == '0px') {
+          $('.tabs-menu-2.squeeze.w-tab-menu').animate({'left':'+='+marginLength});
+        }
       }
-    }
+    });
   });
-});
-</script>
-  <script>
-$(document).ready(function() {
-  $('.tab-link-tab-1-2.w-inline-block.w-tab-link').click( function() {
-    if ($.isMobile) {
-      if ($('.tabs-menu-2.squeeze.w-tab-menu').css('left') == '-'+marginLength) {
-        $('.tabs-menu-2.squeeze.w-tab-menu').animate({'left':'+=-'+marginLength});
+
+  $(document).ready(function() {
+    $('.tab-link-tab-1-2.w-inline-block.w-tab-link').click( function() {
+      if ($.isMobile) {
+        if ($('.tabs-menu-2.squeeze.w-tab-menu').css('left') == '-'+marginLength) {
+          $('.tabs-menu-2.squeeze.w-tab-menu').animate({'left':'+=-'+marginLength});
+        }
       }
-    }
+    });
   });
-});
 </script>
 </body>
 </html>
