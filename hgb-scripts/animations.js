@@ -105,19 +105,23 @@ function startNLPTimeline() {
   nlpTimeline.to('#nlp-airline', 0.0, {x: 0, y: 0, zIndex: 70}, 'resetAnimationPoint');
   nlpTimeline.to('#nlp-airline .channel-tools', 0.0, {opacity: 0}, 'resetAnimationPoint');
   nlpTimeline.to('#nlp-airline .nlp-box', 0.0, {x: 1000, opacity: 0}, 'resetAnimationPoint');
+
+  // document.getElementById('control').addEventListener('click', function() {
+  //   nlpTimeline.paused(!nlpTimeline.paused());
+  // })
 }
 
 var mobileHero = document.querySelector('.hero-image-container');
 window.USER_IS_TOUCHING = false;
 function handleOrientation(event) {
-    if(window.USER_IS_TOUCHING) { return }
-    var y = event.gamma; // In degree in the range [-90,90]
-    var yPercentage = (y/90) * 50 + 50;
-    document.documentElement.style.setProperty('--backgroundXPosition', `${yPercentage}%`);
+  if(window.USER_IS_TOUCHING) { return }
+  var y = event.gamma; // In degree in the range [-90,90]
+  var yPercentage = (y/90) * 50 + 50;
+  document.documentElement.style.setProperty('--backgroundXPosition', `${yPercentage}%`);
 }
 
 function toggleGyroscope(event) {
-    window.USER_IS_TOUCHING = !window.USER_IS_TOUCHING;
+  window.USER_IS_TOUCHING = !window.USER_IS_TOUCHING;
 }
 
 function handleHeroMove(event) {
@@ -131,26 +135,65 @@ function handleHeroMove(event) {
     }
 }
 
-// Commented out for Greg's demo
-// function randomPath(max) {
-//   return Math.floor(Math.random() * Math.floor(max));
-// }
+function animateCircuitWires() {
+  var circuitWires = document.querySelectorAll('svg .circuit-wire');
+  circuitWires.forEach((path, index) => {
+    var offset = anime.setDashoffset(path);
+    path.setAttribute('stroke-dashoffset', offset);
+    var animeSettings;
+    if(index === circuitWires.length - 1) {
+      animeSettings = {
+        targets: path,
+        strokeDashoffset: [offset, 1],
+        duration: anime.random(300, 1000),
+        delay: anime.random(200, 500),
+        direction: 'normal',
+        easing: 'easeInOutSine',
+        autoplay: true,
+        loop: false,
+        complete: function(anim) {
+          animateLightPath(circuitWires, circuitWires[randomPath(circuitWires.length -1)]);
+        }
+      }
+    } else {
+      animeSettings = {
+        targets: path,
+        strokeDashoffset: [offset, 1],
+        duration: anime.random(300, 1000),
+        delay: anime.random(500, 500),
+        direction: 'normal',
+        easing: 'easeInOutSine',
+        autoplay: true,
+        loop: false
+      }
+    }
+    anime(animeSettings);
+  })
+}
 
-// function animateLightPath(lightPaths, path) {
-//   var allPaths = lightPaths;
-//   var offset = anime.setDashoffset(path);
-//   path.setAttribute('stroke-dashoffset', offset);
-//   anime({
-//     targets: path,
-//     stroke: [ '#6098B1', '#FFFF00'],
-//     loop: false,
-//     direction: 'alternate',
-//     easing: 'easeInSine',
-//     complete: function() {
-//       animateLightPath(allPaths, allPaths[randomPath(allPaths.length -1)])
-//     }
-//   })
-// }
+function randomPath(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+function animateLightPath(lightPaths, path) {
+  var allPaths = lightPaths;
+  var lightNode = document.getElementById("light-node");
+  lightNode.setAttribute("fill", "#ccff00");
+  let circuitPath = anime.path(path);
+  anime({
+    targets: lightNode,
+    translateX: circuitPath('x'),
+    translateY: circuitPath('y'),
+    rotate: circuitPath('angle'),
+    loop: false,
+    duration: 500,
+    direction: 'alternate',
+    easing: 'linear',
+    complete: function() {
+      animateLightPath(allPaths, allPaths[randomPath(allPaths.length -1)])
+    }
+  })
+}
 
 // LINK: https://stackoverflow.com/a/3540295
 $.isMobile = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
@@ -175,44 +218,11 @@ document.addEventListener("DOMContentLoaded", function () {
           .css("vertical-align", "middle") // NOTE: Web-Flow: need this CSS property to align with adjascent images
           .css("max-width", "30%")
           .css("display", "inline-block")
+          .addClass("circuit-image")
           ;
           
         $(bannerImage).replaceWith(replacement);
-        var circuitWires = document.querySelectorAll('svg .circuit-wire path');
-        circuitWires.forEach((path, index) => {
-          var offset = anime.setDashoffset(path);
-          path.setAttribute('stroke-dashoffset', offset);
-          var animeSettings;
-          if(index === circuitWires.length - 1) {
-            animeSettings = {
-              targets: path,
-              strokeDashoffset: [offset, 1],
-              duration: anime.random(3000, 3000),
-              delay: anime.random(500, 500),
-              endDelay: 1000,
-              direction: 'normal',
-              easing: 'easeInOutSine',
-              autoplay: true,
-              loop: false,
-              complete: function(anim) {
-                animateLightPath(circuitWires, circuitWires[randomPath(circuitWires.length -1)]);
-              }
-            }
-          } else {
-            animeSettings = {
-              targets: path,
-              strokeDashoffset: [offset, 1],
-              duration: anime.random(3000, 3000),
-              delay: anime.random(500, 500),
-              endDelay: 1000,
-              direction: 'normal',
-              easing: 'easeInOutSine',
-              autoplay: true,
-              loop: false
-            }
-          }
-          anime(animeSettings);
-        })
+        animateCircuitWires();
     })
   
     // Queue up resources for itinerary animation
