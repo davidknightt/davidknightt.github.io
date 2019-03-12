@@ -798,6 +798,10 @@
   display: none;
 }
 
+.hero-image-container {
+  display: none;
+}
+
 @media (max-width: 991px) {
   .nav-logo-holder {
     padding-left: 20px;
@@ -1148,7 +1152,7 @@
     display: none;
   }
   .div-block-15 {
-    display: block;
+    display: none;
     padding-right: 10px;
     padding-left: 10px;
   }
@@ -1275,6 +1279,15 @@
   }
   .tabs-content {
     padding-top: 90px;
+  }
+  .hero-image-container {
+    display: block;
+    overflow: hidden;
+    min-height: 400px;
+    min-width: 800px;
+    background-image: url('../images/Hero-Full-Image.jpg');
+    background-position: 50% 50%;
+    background-size: cover;
   }
 }
 
