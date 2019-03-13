@@ -125,18 +125,18 @@ function toggleGyroscope(event) {
 }
 
 function handleHeroMove(event) {
-    if (event.targetTouches.length > 1) { return }
+  if (event.targetTouches.length > 1) { return }
 
-    if (event.targetTouches.length == 1) {
-        var touch = event.targetTouches[0];
-        // Place element where the finger is
-        var touchPositionPercentage = Math.floor((touch.pageX/event.target.offsetWidth) * 100);
-        mobileHero.style.setProperty('background-position-x', `${touchPositionPercentage}%`);
-    }
+  if (event.targetTouches.length == 1) {
+      var touch = event.targetTouches[0];
+      // Place element where the finger is
+      var touchPositionPercentage = 100 - Math.floor((touch.pageX/event.target.offsetWidth) * 100);
+      mobileHero.style.setProperty('background-position-x', `${touchPositionPercentage}%`);
+  }
 }
 
 function animateCircuitWires() {
-  var circuitWires = document.querySelectorAll('svg .circuit-wire');
+  var circuitWires = document.querySelectorAll('.banner-image .circuit-wire');
   circuitWires.forEach((path, index) => {
     var offset = anime.setDashoffset(path);
     path.setAttribute('stroke-dashoffset', offset);
@@ -178,7 +178,7 @@ function randomPath(max) {
 function animateLightPath(lightPaths, path) {
   var allPaths = lightPaths;
   var lightNode = document.getElementById("light-node");
-  lightNode.setAttribute("fill", "#ccff00");
+  lightNode.setAttribute("fill", "#ffeeee");
   let circuitPath = anime.path(path);
   anime({
     targets: lightNode,
@@ -186,13 +186,58 @@ function animateLightPath(lightPaths, path) {
     translateY: circuitPath('y'),
     rotate: circuitPath('angle'),
     loop: false,
-    duration: 500,
+    duration: 300,
     direction: 'alternate',
     easing: 'linear',
     complete: function() {
       animateLightPath(allPaths, allPaths[randomPath(allPaths.length -1)])
     }
   })
+}
+
+function fetchWebflowHeroImages(imageSelector) {
+  var heroImages = document.querySelectorAll(imageSelector);
+  heroImages.forEach((img, index) => {
+    if (!img || !img.src) {
+      return;
+    }
+    img.style.visibility = "hidden";
+    var imgClasses = img.classList;
+    fetch(img.src)
+      .then(response => {
+        return response.text();
+      })
+      .then(svgStr => {
+        let replacement = $(svgStr)
+          .css("vertical-align", "middle") // NOTE: Web-Flow: need this CSS property to align with adjascent images
+          .css("max-width", "30%")
+          .css("display", "inline-block");
+        imgClasses.forEach(classItem => replacement.addClass(classItem));
+        $(img).replaceWith(replacement);
+        index === heroImages.length - 1 ? animateCircuitWires() : null;
+      })
+  });
+}
+
+function fetchHGBAssets(containerSelector, assets, animationFunction) {
+  const containerEl = document.querySelector(containerSelector);
+  if (!containerEl)
+    return;
+  containerEl.style.visibility = "hidden";
+  Promise.all(assets
+    .map(url => fetch(url)
+    .then(function (res) { 
+      return res.ok ? res.text() : null; 
+    }))
+  ).then(function (goodies) {
+    containerEl.style.visibility = "visible";
+    if (goodies.findIndex(function (x) { return !x; }) != -1) // NOTE: Webflow: these svgs wont load when previewing in webflow
+      return;
+    // Output fetched resources on page
+    containerEl.innerHTML = goodies.join('');
+    $(containerEl).addClass('active');
+    animationFunction();
+  });
 }
 
 // LINK: https://stackoverflow.com/a/3540295
@@ -206,68 +251,24 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileHero.addEventListener('touchend', toggleGyroscope);
     return;
   } else {
-    var bannerImage = document.querySelector('img.banner-image');
-    if (!bannerImage || !bannerImage.src)
-      return;
-    bannerImage.style.visibility = "hidden";
-    fetch(bannerImage.src)
-      .then(function (response) {
-        return response.text();
-      }).then(function (svgStr) {
-        var replacement = $(svgStr)
-          .css("vertical-align", "middle") // NOTE: Web-Flow: need this CSS property to align with adjascent images
-          .css("max-width", "30%")
-          .css("display", "inline-block")
-          .addClass("circuit-image")
-          ;
-          
-        $(bannerImage).replaceWith(replacement);
-        animateCircuitWires();
-    })
-  
+    // Queue up resources for desktop hero animations
+    fetchWebflowHeroImages(".hero-container img[class*=banner-image]");
+
     // Queue up resources for itinerary animation
-    var itinGenCon = document.querySelector('.itin-gen-animation-container');
-    if (!itinGenCon)
-      return;
-    itinGenCon.style.visibility = "hidden";
-    Promise.all([
+    fetchHGBAssets(".itin-gen-animation-container", [
       'hgb-assets/itin-gen-amination-email.svg',
       'hgb-assets/itin-gen-amination-iphone.svg',
       'hgb-assets/itin-gen-amination-it1.svg',
       'hgb-assets/itin-gen-amination-it2.svg',
       'hgb-assets/itin-gen-amination-it3.svg',
       'hgb-assets/itin-gen-amination-slack.svg',
-    ].map(url => fetch(url).then(function (res) { return res.ok ? res.text() : null; }))
-    ).then(function (goodies) {
-      itinGenCon.style.visibility = "visible";
-      if (goodies.findIndex(function (x) { return !x; }) != -1) // NOTE: Webflow: these svgs wont load when previewing in webflow
-        return;
-      // Output fetched resources on page
-      itinGenCon.innerHTML = goodies.join('');
-      $(itinGenCon).addClass('active');
-      // Start itinerary timline animation
-      startItineraryTimeline();
-    });
+    ], startItineraryTimeline);
   
     // Queue up resources for NLP animation
-    var NLPAnimContainer = document.querySelector('.nlp-animation-container');
-    if (!NLPAnimContainer)
-      return;
-    NLPAnimContainer.style.visibility = "hidden";
-    Promise.all([
+    fetchHGBAssets(".nlp-animation-container", [
       'hgb-assets/nlp-airline.svg',
       'hgb-assets/nlp-hotel.svg',
       'hgb-assets/nlp-ota.svg',
-    ].map(url => fetch(url).then(function (res) { return res.ok ? res.text() : null; }))
-    ).then(function (goodies) {
-      NLPAnimContainer.style.visibility = "visible";
-      if (goodies.findIndex(function (x) { return !x; }) != -1) // NOTE: Webflow: these svgs wont load when previewing in webflow
-        return;
-      // Output fetched resources on page
-      NLPAnimContainer.innerHTML = goodies.join('');
-      $(NLPAnimContainer).addClass('active');
-      // Start NLP timline animation
-      startNLPTimeline();
-    });
+    ], startNLPTimeline);
   }
 })

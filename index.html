@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--  Last Published: Wed Mar 13 2019 18:14:52 GMT+0000 (UTC)  -->
+<!--  Last Published: Wed Mar 13 2019 20:09:27 GMT+0000 (UTC)  -->
 <html data-wf-page="5c6d794f0cc9a8ca592f2438" data-wf-site="5c6d794f0cc9a807332f2437">
 <head>
   <meta charset="utf-8">
@@ -196,13 +196,11 @@ window.cookieconsent.initialise({
       //Browser calculation
       //https://stackoverflow.com/questions/9792366/how-can-i-determine-the-distance-of-an-object-to-the-right-browser-window-border
       //$.marginLength = $(window).innerWidth() - ($('.tabs-menu-2.w-tab-menu').offset().left + $('.tabs-menu-2.w-tab-menu').width());
-
       $.marginLength = $(window).width() - ($('.tabs-menu-2.w-tab-menu').width());
       console.log($(window).width());
       console.log(($('.tabs-menu-2.w-tab-menu').width()));
       var marginLength = Math.round($.marginLength);
       var marginLengthPadding = marginLength - 15;
-
       $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
         if ($.isMobile) {
           console.log(marginLength);
@@ -219,7 +217,7 @@ window.cookieconsent.initialise({
           }
         }
       });
-  }, 1000);
+  	}, 1000);
   });
 </script>
 </body>
