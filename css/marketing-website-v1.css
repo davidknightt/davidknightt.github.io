@@ -1246,7 +1246,7 @@
     min-height: 512px;
     background-image: url('../images/Hero-Full-Image.jpg');
     background-position: 50% 0%;
-    background-size: auto 512px;
+    background-size: cover;
   }
   .hero-container {
     background-position: 50% 50%;
