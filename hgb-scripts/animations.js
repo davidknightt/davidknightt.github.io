@@ -117,7 +117,7 @@ function handleOrientation(event) {
   if(window.USER_IS_TOUCHING) { return }
   var y = event.gamma; // In degree in the range [-90,90]
   var yPercentage = (y/90) * 50 + 50;
-  document.documentElement.style.setProperty('--backgroundXPosition', `${yPercentage}%`);
+  mobileHero.style.setProperty('background-position-x', `${yPercentage}%`);
 }
 
 function toggleGyroscope(event) {
@@ -131,7 +131,7 @@ function handleHeroMove(event) {
         var touch = event.targetTouches[0];
         // Place element where the finger is
         var touchPositionPercentage = Math.floor((touch.pageX/event.target.offsetWidth) * 100);
-        document.documentElement.style.setProperty('--backgroundXPosition', `${touchPositionPercentage}%`);
+        mobileHero.style.setProperty('background-position-x', `${touchPositionPercentage}%`);
     }
 }
 
@@ -177,7 +177,6 @@ function randomPath(max) {
 
 function animateLightPath(lightPaths, path) {
   var allPaths = lightPaths;
-  debugger;
   var lightNode = document.getElementById("light-node");
   lightNode.setAttribute("fill", "#ccff00");
   let circuitPath = anime.path(path);
