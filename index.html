@@ -192,29 +192,34 @@ window.cookieconsent.initialise({
   <script src="hgb-scripts/animations.js" type="text/javascript"></script>
   <script>
   $(document).ready(function() {
-    //Browser calculation
-    //https://stackoverflow.com/questions/9792366/how-can-i-determine-the-distance-of-an-object-to-the-right-browser-window-border
-    //$.marginLength = $(window).innerWidth() - ($('.tabs-menu-2.w-tab-menu').offset().left + $('.tabs-menu-2.w-tab-menu').width());
-    $.marginLength = $(window).width() - ($('.tabs-menu-2.w-tab-menu').width());
-    var marginLength = Math.round($.marginLength);
-    var marginLengthPadding = marginLength - 15;
+    setTimeout(function() {
+      //Browser calculation
+      //https://stackoverflow.com/questions/9792366/how-can-i-determine-the-distance-of-an-object-to-the-right-browser-window-border
+      //$.marginLength = $(window).innerWidth() - ($('.tabs-menu-2.w-tab-menu').offset().left + $('.tabs-menu-2.w-tab-menu').width());
 
-    $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
-      if ($.isMobile) {
-        console.log(marginLength);
-        if ($('.tabs-menu-2.w-tab-menu').css('left') == '0px') {
-          $('.tabs-menu-2.w-tab-menu').animate({'left':'+='+marginLengthPadding});
+      $.marginLength = $(window).width() - ($('.tabs-menu-2.w-tab-menu').width());
+      console.log($(window).width());
+      console.log(($('.tabs-menu-2.w-tab-menu').width()));
+      var marginLength = Math.round($.marginLength);
+      var marginLengthPadding = marginLength - 15;
+
+      $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
+        if ($.isMobile) {
+          console.log(marginLength);
+          if ($('.tabs-menu-2.w-tab-menu').css('left') == '0px') {
+            $('.tabs-menu-2.w-tab-menu').animate({'left':'+='+marginLengthPadding});
+          }
         }
-      }
-    });
-    $('.tab-link-tab-1-2.w-inline-block.w-tab-link').click( function() {
-      if ($.isMobile) {
-        console.log(marginLength);
-        if ($('.tabs-menu-2.w-tab-menu').css('left') == marginLengthPadding+'px') {
-          $('.tabs-menu-2.w-tab-menu').animate({'left':'-='+marginLengthPadding});
+      });
+      $('.tab-link-tab-1-2.w-inline-block.w-tab-link').click( function() {
+        if ($.isMobile) {
+          console.log(marginLength);
+          if ($('.tabs-menu-2.w-tab-menu').css('left') == marginLengthPadding+'px') {
+            $('.tabs-menu-2.w-tab-menu').animate({'left':'-='+marginLengthPadding});
+          }
         }
-      }
-    });
+      });
+  }, 1000);
   });
 </script>
 </body>
