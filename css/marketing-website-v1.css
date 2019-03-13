@@ -1015,7 +1015,7 @@
   .hero-section {
     position: relative;
     min-height: 512px;
-    background-image: url('../images/Hero-Full-Image.jpg');
+    background-image: url('../images/Hero-Full-Image-Mobile.jpg');
     background-position: 50% 0%;
     background-size: auto 512px;
   }
@@ -1244,9 +1244,9 @@
   }
   .hero-section {
     min-height: 512px;
-    background-image: url('../images/Hero-Full-Image.jpg');
-    background-position: 50% 0%;
-    background-size: cover;
+    background-image: url('../images/Hero-Full-Image-Mobile.jpg');
+    background-position: 50% 50%;
+    background-size: auto 512px;
   }
   .hero-container {
     background-position: 50% 50%;
