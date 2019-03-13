@@ -111,7 +111,7 @@ function startNLPTimeline() {
   // })
 }
 
-var mobileHero = document.querySelector('.hero-image-container');
+var mobileHero = document.querySelector('.hero-section');
 window.USER_IS_TOUCHING = false;
 function handleOrientation(event) {
   if(window.USER_IS_TOUCHING) { return }
