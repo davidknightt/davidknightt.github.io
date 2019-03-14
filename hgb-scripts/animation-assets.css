@@ -1,3 +1,18 @@
+.banner-image-left,
+.banner-image,
+.banner-image-right {
+  vertical-align: middle;
+  max-width: 30%;
+  display: inline-block;
+  opacity: 0;
+}
+
+.banner-image-left.active,
+.banner-image.active,
+.banner-image-right.active {
+  opacity: 1;
+}
+
 .itin-gen-animation-container {
   position: relative;
   overflow: hidden;

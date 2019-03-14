@@ -111,6 +111,32 @@ function startNLPTimeline() {
   // })
 }
 
+function levitation(selector) {
+  console.log("levitation");
+}
+
+function startBannerImageRight() {
+  document.querySelector(".banner-image-right").classList.add('active');
+  const bannerImageRightTimeline = new TimelineMax({
+    onComplete: function() {
+      levitation(".banner-image-right #Airplane-Hotel-Suitcase-Tickets-Illustration g[id*='Illustration']");
+    }
+  })
+
+  bannerImageRightTimeline.staggerFrom(".banner-image-right #Airplane-Hotel-Suitcase-Tickets-Illustration g[id*='Illustration']", 0.5, {opacity: 0, ease:Power1.easeOut}, 0.3);
+}
+
+function startBannerImageLeft() {
+  const bannerImageLeftTimeline = new TimelineMax({
+    onComplete: function() {
+      levitation(".banner-image-left #Omnichannel-Illustration g[id*='Illustration']");
+      startBannerImageRight();
+    }
+  })
+
+  bannerImageLeftTimeline.staggerFrom(".banner-image-left #Omnichannel-Illustration g[id*='Illustration']", 0.5, {opacity: 0, ease:Power1.easeOut}, 0.3);
+}
+
 var mobileHero = document.querySelector('.hero-section');
 mobileHero.style.setProperty('background-position-x', `50%`);
 var heroTouchDownEvent = null;
@@ -119,7 +145,7 @@ var heroXPercentGyro = 50;
 window.USER_IS_TOUCHING = false;
 
 function handleOrientation(event) {
-  heroXPercentGyro = (event.gamma/90) * 50 + 50; // NOTE: gamma is in degree in the range [-90,90]
+  heroXPercentGyro = (event.gamma/90) * 50 + 50; //Gamma is in degree in the range [-90,90]
   if (window.USER_IS_TOUCHING)
     return;
   mobileHero.style.setProperty('background-position-x', `${heroXPercentGyro}%`);
@@ -129,29 +155,27 @@ function handleHeroMouseDown(event) {
   window.USER_IS_TOUCHING = true;
   heroTouchDownEvent = event.targetTouches[0];
   var touchDownPercentangeStr = mobileHero.style.getPropertyValue('background-position-x');
-  heroXPercentTouchDown = touchDownPercentangeStr
-    ? parseFloat(mobileHero.style.getPropertyValue('background-position-x'))
-    : 0;
+  heroXPercentTouchDown = touchDownPercentangeStr ? parseFloat(mobileHero.style.getPropertyValue('background-position-x')): 0;
 }
+
 function handleHeroMouseUp(event) {
   window.USER_IS_TOUCHING = false;
-  $(mobileHero).animate({
-    'background-position-x': `${heroXPercentGyro}%`
-  }, 300);
+  $(mobileHero).animate({'background-position-x': `${heroXPercentGyro}%`}, 300)
 }
+
 function handleHeroMove(event) {
   var touch = event.targetTouches[0];
   if (touch && heroTouchDownEvent) {
     var xDelta = touch.clientX - heroTouchDownEvent.clientX;
     var percentDelta = -xDelta / event.target.offsetWidth * 100;
-    var resultPercentagio = heroXPercentTouchDown + percentDelta;
-    resultPercentagio = Math.max(Math.min(resultPercentagio, 100), 0);
-    // console.log(resultPercentagio);
-    mobileHero.style.setProperty('background-position-x', `${resultPercentagio}%`);
+    var resultPercentage = heroXPercentTouchDown + percentDelta;
+    resultPercentage = Math.max(Math.min(resultPercentage, 100), 0);
+    mobileHero.style.setProperty('background-position-x', `${resultPercentage}%`);
   }
 }
 
 function animateCircuitWires() {
+  document.querySelector('.banner-image').classList.add('active');
   var circuitWires = document.querySelectorAll('.banner-image .circuit-wire');
   circuitWires.forEach((path, index) => {
     var offset = anime.setDashoffset(path);
@@ -169,6 +193,7 @@ function animateCircuitWires() {
         loop: false,
         complete: function(anim) {
           animateLightPath(circuitWires, circuitWires[randomPath(circuitWires.length -1)]);
+          startBannerImageLeft()
         }
       }
     } else {
@@ -192,6 +217,7 @@ function randomPath(max) {
 }
 
 function animateLightPath(lightPaths, path) {
+  document.querySelector('.banner-image-left').classList.add('active');
   var allPaths = lightPaths;
   var lightNode = document.getElementById("light-node");
   lightNode.setAttribute("fill", "#ffeeee");
@@ -224,10 +250,7 @@ function fetchWebflowHeroImages(imageSelector) {
         return response.text();
       })
       .then(svgStr => {
-        let replacement = $(svgStr)
-          .css("vertical-align", "middle") // NOTE: Web-Flow: need this CSS property to align with adjascent images
-          .css("max-width", "30%")
-          .css("display", "inline-block");
+        let replacement = $(svgStr);
         imgClasses.forEach(classItem => replacement.addClass(classItem));
         $(img).replaceWith(replacement);
         index === heroImages.length - 1 ? animateCircuitWires() : null;
@@ -269,6 +292,7 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     // Queue up resources for desktop hero animations
     fetchWebflowHeroImages(".hero-container img[class*=banner-image]");
+    // NOTE: [class*="banner-image"] will select anything that has a class that contains (but is not necessarily equal to) 'banner-image' - SP
 
     // Queue up resources for itinerary animation
     fetchHGBAssets(".itin-gen-animation-container", [
