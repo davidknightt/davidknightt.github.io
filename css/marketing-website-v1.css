@@ -1384,6 +1384,9 @@
     display: block;
     margin-right: auto;
     margin-left: auto;
+    background-image: url('../images/PaaS-Image-Mobile-Background.svg');
+    background-position: 50% 50%;
+    background-size: 490px 490px;
   }
   .rd-img-subtext {
     font-size: 14px;
@@ -1420,6 +1423,11 @@
     background-image: url('../images/Hero-Full-Image.jpg');
     background-position: 50% 50%;
     background-size: auto;
+  }
+  .ai-paas-mobile-img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
