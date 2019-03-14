@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="299px" height="226px" viewBox="0 0 299 226" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="300px" height="226px" viewBox="0 0 300 226" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
     <title>Omnichannel Illustration</title>
     <desc>Created with Sketch.</desc>
@@ -8,7 +8,7 @@
             <stop stop-color="#B6F3FF" offset="0%"></stop>
             <stop stop-color="#D4F5FB" offset="100%"></stop>
         </radialGradient>
-        <polygon id="path-2" points="30 14 60 41 0 41"></polygon>
+        <polygon id="path-2" points="31 14 61 41 1 41"></polygon>
         <filter x="-5.3%" y="-17.9%" width="110.5%" height="124.4%" filterUnits="objectBoundingBox" id="filter-3">
             <feMorphology radius="0.25" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
             <feOffset dx="0" dy="-2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
@@ -16,8 +16,8 @@
             <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0482053895 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <polygon id="path-4" points="30 0 60 27 0 27"></polygon>
-        <filter x="-5.3%" y="-17.9%" width="110.5%" height="124.4%" filterUnits="objectBoundingBox" id="filter-5">
+        <polygon id="path-4" points="30.5 1 60 28 1 28"></polygon>
+        <filter x="-5.3%" y="-17.9%" width="110.7%" height="124.4%" filterUnits="objectBoundingBox" id="filter-5">
             <feMorphology radius="0.25" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
             <feOffset dx="0" dy="-2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
@@ -28,16 +28,16 @@
             <stop stop-color="#B6F3FF" offset="0%"></stop>
             <stop stop-color="#D4F5FB" offset="100%"></stop>
         </radialGradient>
-        <polygon id="path-7" points="43.7704918 20.3333333 87.5409836 59.547619 0 59.547619"></polygon>
-        <filter x="-3.6%" y="-12.3%" width="107.2%" height="116.8%" filterUnits="objectBoundingBox" id="filter-8">
+        <polygon id="path-7" points="44.270492 20.3333333 87.540984 59.547619 1 59.547619"></polygon>
+        <filter x="-3.6%" y="-12.3%" width="107.3%" height="116.8%" filterUnits="objectBoundingBox" id="filter-8">
             <feMorphology radius="0.25" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
             <feOffset dx="0" dy="-2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0482053895 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <polygon id="path-9" points="43.7704918 0 87.5409836 39.2142857 0 39.2142857"></polygon>
-        <filter x="-3.6%" y="-12.3%" width="107.2%" height="116.8%" filterUnits="objectBoundingBox" id="filter-10">
+        <polygon id="path-9" points="44.270492 1 87.540984 40.2142857 1 40.2142857"></polygon>
+        <filter x="-3.6%" y="-12.3%" width="107.3%" height="116.8%" filterUnits="objectBoundingBox" id="filter-10">
             <feMorphology radius="0.25" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
             <feOffset dx="0" dy="-2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
@@ -48,16 +48,16 @@
             <stop stop-color="#B6F3FF" offset="0%"></stop>
             <stop stop-color="#D4F5FB" offset="100%"></stop>
         </radialGradient>
-        <polygon id="path-12" points="27.5409836 12.6666667 55.0819672 37.0952381 0 37.0952381"></polygon>
-        <filter x="-5.7%" y="-19.8%" width="111.5%" height="127.0%" filterUnits="objectBoundingBox" id="filter-13">
+        <polygon id="path-12" points="28.0409835 12.6666667 55.081967 37.0952381 1 37.0952381"></polygon>
+        <filter x="-5.8%" y="-19.8%" width="111.6%" height="127.0%" filterUnits="objectBoundingBox" id="filter-13">
             <feMorphology radius="0.25" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
             <feOffset dx="0" dy="-2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0482053895 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <polygon id="path-14" points="27.5409836 0 55.0819672 24.4285714 0 24.4285714"></polygon>
-        <filter x="-5.7%" y="-19.8%" width="111.5%" height="127.0%" filterUnits="objectBoundingBox" id="filter-15">
+        <polygon id="path-14" points="28.0409835 1 55.081967 25.4285714 1 25.4285714"></polygon>
+        <filter x="-5.8%" y="-19.8%" width="111.6%" height="127.0%" filterUnits="objectBoundingBox" id="filter-15">
             <feMorphology radius="0.25" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
             <feOffset dx="0" dy="-2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
@@ -124,14 +124,14 @@
                         <g id="Email-Illustration" transform="translate(237.000000, 169.000000)">
                             <g id="Group-9">
                                 <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="61" height="42"></rect>
-                                <rect id="Rectangle" stroke="#003D4C" stroke-width="2" fill-opacity="0.4" fill="url(#radialGradient-1)" x="1" y="1" width="59" height="40"></rect>
+                                <rect id="Rectangle" stroke="#003D4C" stroke-width="2" fill-opacity="0.6" fill="url(#radialGradient-1)" x="1" y="1" width="59" height="40"></rect>
                                 <g id="Triangle-Copy-4">
                                     <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
-                                    <use stroke="#BED8F4" stroke-width="0.5" fill="#EEF5FC" fill-rule="evenodd" xlink:href="#path-2"></use>
+                                    <use stroke="#003D4C" stroke-width="0.5" fill="#EBFBFE" fill-rule="evenodd" xlink:href="#path-2"></use>
                                 </g>
-                                <g id="Triangle" transform="translate(30.000000, 13.500000) scale(1, -1) translate(-30.000000, -13.500000) ">
+                                <g id="Triangle" transform="translate(30.500000, 14.500000) scale(1, -1) translate(-30.500000, -14.500000) ">
                                     <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
-                                    <use stroke="#BED8F4" stroke-width="0.5" fill="#EEF5FC" fill-rule="evenodd" xlink:href="#path-4"></use>
+                                    <use stroke="#003D4C" stroke-width="0.5" fill="#EBFBFE" fill-rule="evenodd" xlink:href="#path-4"></use>
                                 </g>
                                 <rect id="Rectangle-Copy-100" stroke="#003D4C" stroke-width="2" x="1" y="1" width="59" height="40"></rect>
                             </g>
@@ -139,33 +139,33 @@
                         </g>
                         <g id="Email-Illustration" transform="translate(35.000000, 165.000000)">
                             <g id="Group-9">
-                                <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="89" height="61"></rect>
-                                <rect id="Rectangle" stroke="#003D4C" stroke-width="2" fill-opacity="0.4" fill="url(#radialGradient-6)" x="1" y="1" width="87" height="59"></rect>
+                                <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="89" height="61" rx="2"></rect>
+                                <rect id="Rectangle" stroke="#003D4C" stroke-width="2" fill-opacity="0.6" fill="url(#radialGradient-6)" x="1" y="1" width="87" height="59" rx="2"></rect>
                                 <g id="Triangle-Copy-4">
                                     <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use>
-                                    <use stroke="#BED8F4" stroke-width="0.5" fill="#EEF5FC" fill-rule="evenodd" xlink:href="#path-7"></use>
+                                    <use stroke="#003D4C" stroke-width="0.5" fill="#EBFBFE" fill-rule="evenodd" xlink:href="#path-7"></use>
                                 </g>
-                                <g id="Triangle" transform="translate(43.770492, 19.607143) scale(1, -1) translate(-43.770492, -19.607143) ">
+                                <g id="Triangle" transform="translate(44.270492, 20.607143) scale(1, -1) translate(-44.270492, -20.607143) ">
                                     <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-9"></use>
-                                    <use stroke="#BED8F4" stroke-width="0.5" fill="#EEF5FC" fill-rule="evenodd" xlink:href="#path-9"></use>
+                                    <use stroke="#003D4C" stroke-width="0.5" fill="#EBFBFE" fill-rule="evenodd" xlink:href="#path-9"></use>
                                 </g>
-                                <rect id="Rectangle-Copy-100" stroke="#003D4C" stroke-width="2" x="1" y="1" width="87" height="59"></rect>
+                                <rect id="Rectangle-Copy-100" stroke="#003D4C" stroke-width="2" x="1" y="1" width="87" height="59" rx="1"></rect>
                             </g>
                             <path d="M37.08,15.64 C37.08,11.02 40.32,7.8 45,7.8 C49.68,7.8 52.92,11.06 52.92,15.64 C52.92,18.58 51.38,19.92 49.62,19.92 C48.44,19.92 47.64,19.42 47.2,18.64 L47.18,18.64 C46.8,19.38 45.96,19.9 44.54,19.9 C43.08,19.9 42.08,19.24 41.66,17.94 C41.48,17.4 41.4,16.82 41.4,15.72 C41.4,14.62 41.48,14.04 41.66,13.5 C42.08,12.2 43.08,11.54 44.46,11.54 C45.52,11.54 46.3,12.02 46.62,12.56 L46.66,12.56 L46.66,11.94 C46.66,11.82 46.74,11.76 46.82,11.76 L48.3,11.76 C48.42,11.76 48.46,11.82 48.46,11.94 L48.46,16.88 C48.46,17.88 49,18.28 49.62,18.28 C50.4,18.28 51.08,17.68 51.08,15.64 C51.08,11.98 48.76,9.44 45,9.44 C41.24,9.44 38.92,11.94 38.92,15.64 C38.92,19.34 41.24,21.84 45,21.84 C46.86,21.84 48.08,21.5 49.28,20.94 C49.4,20.88 49.5,20.9 49.56,21.04 L50.02,22.12 C50.08,22.22 50.04,22.32 49.94,22.38 C48.5,23.14 47.04,23.48 45,23.48 C40.32,23.48 37.08,20.26 37.08,15.64 Z M43.38,17.14 C43.64,17.88 44.16,18.24 44.96,18.24 C45.76,18.24 46.28,17.88 46.52,17.14 C46.62,16.82 46.66,16.48 46.66,15.72 C46.66,14.96 46.62,14.62 46.52,14.32 C46.28,13.56 45.76,13.2 44.96,13.2 C44.16,13.2 43.64,13.56 43.38,14.32 C43.28,14.62 43.24,14.96 43.24,15.72 C43.24,16.48 43.28,16.82 43.38,17.14 Z" id="@" fill="#003D4C" fill-rule="nonzero"></path>
                         </g>
                         <g id="Email-Illustration" transform="translate(24.000000, 13.000000)">
                             <g id="Group-9">
-                                <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="56" height="38"></rect>
-                                <rect id="Rectangle" stroke="#003D4C" stroke-width="2" fill-opacity="0.4" fill="url(#radialGradient-11)" x="1" y="1" width="54" height="36"></rect>
+                                <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="56" height="38" rx="1"></rect>
+                                <rect id="Rectangle" stroke="#003D4C" stroke-width="2" fill-opacity="0.6" fill="url(#radialGradient-11)" x="1" y="1" width="54" height="36" rx="1"></rect>
                                 <g id="Triangle-Copy-4">
                                     <use fill="black" fill-opacity="1" filter="url(#filter-13)" xlink:href="#path-12"></use>
-                                    <use stroke="#BED8F4" stroke-width="0.5" fill="#EEF5FC" fill-rule="evenodd" xlink:href="#path-12"></use>
+                                    <use stroke="#003D4C" stroke-width="0.5" fill="#EBFBFE" fill-rule="evenodd" xlink:href="#path-12"></use>
                                 </g>
-                                <g id="Triangle" transform="translate(27.540984, 12.214286) scale(1, -1) translate(-27.540984, -12.214286) ">
+                                <g id="Triangle" transform="translate(28.040983, 13.214286) scale(1, -1) translate(-28.040983, -13.214286) ">
                                     <use fill="black" fill-opacity="1" filter="url(#filter-15)" xlink:href="#path-14"></use>
-                                    <use stroke="#BED8F4" stroke-width="0.5" fill="#EEF5FC" fill-rule="evenodd" xlink:href="#path-14"></use>
+                                    <use stroke="#003D4C" stroke-width="0.5" fill="#EBFBFE" fill-rule="evenodd" xlink:href="#path-14"></use>
                                 </g>
-                                <rect id="Rectangle-Copy-100" stroke="#003D4C" stroke-width="2" x="1" y="1" width="54" height="36"></rect>
+                                <rect id="Rectangle-Copy-100" stroke="#003D4C" stroke-width="2" x="1" y="1" width="54" height="36" rx="1"></rect>
                             </g>
                             <path d="M21.664,10.712 C21.664,7.016 24.256,4.44 28,4.44 C31.744,4.44 34.336,7.048 34.336,10.712 C34.336,13.064 33.104,14.136 31.696,14.136 C30.752,14.136 30.112,13.736 29.76,13.112 L29.744,13.112 C29.44,13.704 28.768,14.12 27.632,14.12 C26.464,14.12 25.664,13.592 25.328,12.552 C25.184,12.12 25.12,11.656 25.12,10.776 C25.12,9.896 25.184,9.432 25.328,9 C25.664,7.96 26.464,7.432 27.568,7.432 C28.416,7.432 29.04,7.816 29.296,8.248 L29.328,8.248 L29.328,7.752 C29.328,7.656 29.392,7.608 29.456,7.608 L30.64,7.608 C30.736,7.608 30.768,7.656 30.768,7.752 L30.768,11.704 C30.768,12.504 31.2,12.824 31.696,12.824 C32.32,12.824 32.864,12.344 32.864,10.712 C32.864,7.784 31.008,5.752 28,5.752 C24.992,5.752 23.136,7.752 23.136,10.712 C23.136,13.672 24.992,15.672 28,15.672 C29.488,15.672 30.464,15.4 31.424,14.952 C31.52,14.904 31.6,14.92 31.648,15.032 L32.016,15.896 C32.064,15.976 32.032,16.056 31.952,16.104 C30.8,16.712 29.632,16.984 28,16.984 C24.256,16.984 21.664,14.408 21.664,10.712 Z M26.704,11.912 C26.912,12.504 27.328,12.792 27.968,12.792 C28.608,12.792 29.024,12.504 29.216,11.912 C29.296,11.656 29.328,11.384 29.328,10.776 C29.328,10.168 29.296,9.896 29.216,9.656 C29.024,9.048 28.608,8.76 27.968,8.76 C27.328,8.76 26.912,9.048 26.704,9.656 C26.624,9.896 26.592,10.168 26.592,10.776 C26.592,11.384 26.624,11.656 26.704,11.912 Z" id="@" fill="#003D4C" fill-rule="nonzero"></path>
                         </g>

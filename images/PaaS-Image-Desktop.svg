@@ -61,17 +61,17 @@
             <stop stop-color="#B6F3FF" offset="0%"></stop>
             <stop stop-color="#D4F5FB" offset="100%"></stop>
         </radialGradient>
-        <polygon id="path-14" points="43.7704918 20.3333333 87.5409836 59.547619 0 59.547619"></polygon>
-        <filter x="-3.6%" y="-12.3%" width="107.2%" height="116.8%" filterUnits="objectBoundingBox" id="filter-15">
-            <feMorphology radius="0.25" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+        <polygon id="path-14" points="44.270492 21.3333333 86.540984 60.547619 2 60.547619"></polygon>
+        <filter x="-4.5%" y="-13.2%" width="108.9%" height="118.3%" filterUnits="objectBoundingBox" id="filter-15">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
             <feOffset dx="0" dy="-2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0482053895 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <polygon id="path-16" points="43.7704918 0 87.5409836 39.2142857 0 39.2142857"></polygon>
-        <filter x="-3.6%" y="-12.3%" width="107.2%" height="116.8%" filterUnits="objectBoundingBox" id="filter-17">
-            <feMorphology radius="0.25" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+        <polygon id="path-16" points="44.270492 1 86.540984 40.2142857 2 40.2142857"></polygon>
+        <filter x="-4.5%" y="-13.2%" width="108.9%" height="118.3%" filterUnits="objectBoundingBox" id="filter-17">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
             <feOffset dx="0" dy="-2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
@@ -308,9 +308,7 @@
                     <g id="HGB-Logo-Copy" opacity="0.8" fill="#005B82">
                         <path d="M27.2347814,5.42679514 C27.2347814,4.77675674 27.7539233,4.25066257 28.3932045,4.25066257 L38.8005968,4.25066257 C39.4381242,4.25066257 39.9555122,4.77675674 39.9555122,5.42679514 L39.9555122,8.43890719 L27.2347814,8.43890719 L27.2347814,5.42679514 Z M59.623274,8.43890719 L44.1358324,8.43890719 L44.1358324,5.42679514 C44.1358324,2.43519184 41.7426933,0 38.8005968,0 L28.3932045,0 C25.4493541,0 23.0553381,2.43519184 23.0553381,5.42679514 L23.0553381,8.43890719 L7.37672604,8.43890719 C3.30339123,8.43890719 0,11.796993 0,15.9406534 L0,48.6218017 C0,52.7654621 3.30339123,56.1235479 7.37672604,56.1235479 L47.7321178,56.1235479 L43.8780153,72 L64.2499509,54.458772 C64.3569362,54.3713868 64.4569061,54.2777599 64.5603838,54.1850246 L64.7401542,54.0191712 C66.1634098,52.714636 67,50.7431204 67,48.6218017 L67,15.9406534 C67,11.796993 63.6966088,8.43890719 59.623274,8.43890719 Z" id="Fill-21"></path>
                     </g>
-                    <text id="AI" font-family="DINNextLTPro-Medium, DIN Next LT Pro" font-size="28" font-weight="400" fill="#FFFFFF">
-                        <tspan x="21.11" y="41">AI</tspan>
-                    </text>
+                    <path d="M21.614,40.72 L28.138,22.24 C28.194,22.072 28.306,21.96 28.502,21.96 L31.078,21.96 C31.274,21.96 31.386,22.072 31.442,22.24 L37.882,40.72 C37.938,40.888 37.882,41 37.686,41 L34.942,41 C34.746,41 34.634,40.916 34.578,40.72 L33.318,37.024 L26.15,37.024 L24.89,40.72 C24.834,40.916 24.722,41 24.526,41 L21.81,41 C21.614,41 21.558,40.888 21.614,40.72 Z M27.158,34.084 L32.31,34.084 L29.79,26.692 L29.706,26.692 L27.158,34.084 Z M40.486,40.72 L40.486,22.24 C40.486,22.072 40.598,21.96 40.766,21.96 L43.51,21.96 C43.678,21.96 43.79,22.072 43.79,22.24 L43.79,40.72 C43.79,40.888 43.678,41 43.51,41 L40.766,41 C40.598,41 40.486,40.888 40.486,40.72 Z" id="AI" fill="#FFFFFF" fill-rule="nonzero"></path>
                 </g>
             </g>
             <g id="Cloud-Platform" transform="translate(325.000000, 487.000000)">
@@ -386,21 +384,19 @@
                     </g>
                     <g id="Email-Illustration" transform="translate(24.000000, 282.000000)">
                         <g id="Group-9">
-                            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="89" height="61"></rect>
-                            <rect id="Rectangle" stroke="#003D4C" stroke-width="2" fill-opacity="0.4" fill="url(#radialGradient-13)" x="1" y="1" width="87" height="59"></rect>
+                            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="89" height="61" rx="1"></rect>
+                            <rect id="Rectangle" stroke="#003D4C" stroke-width="2" fill-opacity="0.7" fill="url(#radialGradient-13)" x="1" y="1" width="87" height="59" rx="1"></rect>
                             <g id="Triangle-Copy-4">
                                 <use fill="black" fill-opacity="1" filter="url(#filter-15)" xlink:href="#path-14"></use>
-                                <use stroke="#BED8F4" stroke-width="0.5" fill="#EEF5FC" fill-rule="evenodd" xlink:href="#path-14"></use>
+                                <use stroke="#003D4C" stroke-width="1" fill="#EBFBFE" fill-rule="evenodd" xlink:href="#path-14"></use>
                             </g>
-                            <g id="Triangle" transform="translate(43.770492, 19.607143) scale(1, -1) translate(-43.770492, -19.607143) ">
+                            <g id="Triangle" transform="translate(44.270492, 20.607143) scale(1, -1) translate(-44.270492, -20.607143) ">
                                 <use fill="black" fill-opacity="1" filter="url(#filter-17)" xlink:href="#path-16"></use>
-                                <use stroke="#BED8F4" stroke-width="0.5" fill="#EEF5FC" fill-rule="evenodd" xlink:href="#path-16"></use>
+                                <use stroke="#003D4C" stroke-width="1" fill="#EBFBFE" fill-rule="evenodd" xlink:href="#path-16"></use>
                             </g>
-                            <rect id="Rectangle-Copy-100" stroke="#003D4C" stroke-width="2" x="1" y="1" width="87" height="59"></rect>
+                            <rect id="Rectangle-Copy-100" stroke="#003D4C" stroke-width="3" x="0" y="0" width="89" height="61" rx="1"></rect>
                         </g>
-                        <text id="@" font-family="DINNextLTPro-Medium, DIN Next LT Pro" font-size="20" font-weight="400" fill="#003D4C">
-                            <tspan x="36" y="21">@</tspan>
-                        </text>
+                        <path d="M36.288,15.104 C36.288,10.022 39.852,6.48 45,6.48 C50.148,6.48 53.712,10.066 53.712,15.104 C53.712,18.338 52.018,19.812 50.082,19.812 C48.784,19.812 47.904,19.262 47.42,18.404 L47.398,18.404 C46.98,19.218 46.056,19.79 44.494,19.79 C42.888,19.79 41.788,19.064 41.326,17.634 C41.128,17.04 41.04,16.402 41.04,15.192 C41.04,13.982 41.128,13.344 41.326,12.75 C41.788,11.32 42.888,10.594 44.406,10.594 C45.572,10.594 46.43,11.122 46.782,11.716 L46.826,11.716 L46.826,11.034 C46.826,10.902 46.914,10.836 47.002,10.836 L48.63,10.836 C48.762,10.836 48.806,10.902 48.806,11.034 L48.806,16.468 C48.806,17.568 49.4,18.008 50.082,18.008 C50.94,18.008 51.688,17.348 51.688,15.104 C51.688,11.078 49.136,8.284 45,8.284 C40.864,8.284 38.312,11.034 38.312,15.104 C38.312,19.174 40.864,21.924 45,21.924 C47.046,21.924 48.388,21.55 49.708,20.934 C49.84,20.868 49.95,20.89 50.016,21.044 L50.522,22.232 C50.588,22.342 50.544,22.452 50.434,22.518 C48.85,23.354 47.244,23.728 45,23.728 C39.852,23.728 36.288,20.186 36.288,15.104 Z M43.218,16.754 C43.504,17.568 44.076,17.964 44.956,17.964 C45.836,17.964 46.408,17.568 46.672,16.754 C46.782,16.402 46.826,16.028 46.826,15.192 C46.826,14.356 46.782,13.982 46.672,13.652 C46.408,12.816 45.836,12.42 44.956,12.42 C44.076,12.42 43.504,12.816 43.218,13.652 C43.108,13.982 43.064,14.356 43.064,15.192 C43.064,16.028 43.108,16.402 43.218,16.754 Z" id="@" fill="#003D4C" fill-rule="nonzero"></path>
                     </g>
                 </g>
                 <g id="Arrows" transform="translate(212.000000, 115.000000)" fill="#85CDDB">

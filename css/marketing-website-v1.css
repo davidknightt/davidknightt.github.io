@@ -720,10 +720,12 @@
 }
 
 .column {
+  margin-bottom: auto;
   padding-bottom: 20px;
 }
 
 .column-2 {
+  margin-bottom: auto;
   padding-bottom: 0px;
 }
 
@@ -766,7 +768,7 @@
   font-family: DinNextLTPro, sans-serif;
   color: hsla(191.84210526315786, 100.00%, 14.90%, 1.00);
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .ai-paas-mobile {
@@ -786,6 +788,7 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  min-height: 453px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -807,12 +810,16 @@
 .text-block-21 {
   font-family: DinNextLTPro, sans-serif;
   color: hsla(191.84210526315786, 100.00%, 14.90%, 1.00);
-  font-size: 18px;
-  line-height: 18px;
+  font-size: 28px;
+  line-height: 28px;
+  font-weight: 500;
 }
 
 .success-message {
+  padding-top: 0px;
+  padding-bottom: 0px;
   background-color: transparent;
+  color: hsla(191.84210526315786, 100.00%, 14.90%, 1.00);
 }
 
 .error-message {
@@ -938,6 +945,7 @@
   }
   .rd-img {
     width: 75%;
+    margin: auto;
   }
   .header-support-text {
     padding-bottom: 10px;
@@ -954,6 +962,10 @@
   }
   .icon-2 {
     display: none;
+  }
+  .text-block-21 {
+    font-size: 24px;
+    line-height: 24px;
   }
   .error-message {
     margin-right: 0px;
@@ -1006,6 +1018,9 @@
     font-size: 28px;
     line-height: 28px;
   }
+  .rd-button.rd-page {
+    width: 350px;
+  }
   .button-2.rd-button {
     display: none;
   }
@@ -1015,7 +1030,7 @@
   .hero-section {
     position: relative;
     min-height: 512px;
-    background-image: url('../images/Hero-Full-Image-Mobile.jpg');
+    background-image: url('../images/Hero-Full-Image.jpg');
     background-position: 50% 0%;
     background-size: auto 512px;
   }
@@ -1039,6 +1054,9 @@
   .hero-content {
     padding-right: 10px;
     padding-left: 10px;
+  }
+  .text-field {
+    width: 350px;
   }
   .footer-icon {
     padding-left: 20px;
@@ -1067,6 +1085,10 @@
   .columns-2 {
     padding-right: 20px;
     padding-left: 20px;
+  }
+  .text-block-21 {
+    font-size: 20px;
+    line-height: 20px;
   }
   .error-message {
     margin-right: 0px;
@@ -1233,6 +1255,10 @@
     padding-right: 10px;
     padding-left: 10px;
   }
+  .div-block-16 {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
   .omnichannel-desktop {
     display: none;
   }
@@ -1360,8 +1386,8 @@
     padding-left: 10px;
   }
   .text-block-21 {
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 18px;
+    line-height: 18px;
   }
   .error-message {
     margin-right: 0px;

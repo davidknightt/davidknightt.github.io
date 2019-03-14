@@ -62,17 +62,17 @@
             <stop stop-color="#B6F3FF" offset="0%"></stop>
             <stop stop-color="#D4F5FB" offset="100%"></stop>
         </radialGradient>
-        <polygon id="path-16" points="24.3504477 11.3303114 48.7008954 33.1816261 0 33.1816261"></polygon>
-        <filter x="-6.5%" y="-22.1%" width="112.9%" height="130.1%" filterUnits="objectBoundingBox" id="filter-17">
-            <feMorphology radius="0.25" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+        <polygon id="path-16" points="24.7008954 11.3303114 47.7008954 33.1816261 1.70089543 33.1816261"></polygon>
+        <filter x="-8.2%" y="-23.7%" width="116.3%" height="132.9%" filterUnits="objectBoundingBox" id="filter-17">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
             <feOffset dx="0" dy="-2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.0482053895 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
-        <polygon id="path-18" points="24.3504477 0 48.7008954 21.8513147 0 21.8513147"></polygon>
-        <filter x="-6.5%" y="-22.1%" width="112.9%" height="130.1%" filterUnits="objectBoundingBox" id="filter-19">
-            <feMorphology radius="0.25" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+        <polygon id="path-18" points="24.7008954 -8.95283847e-13 47.7008954 21.8513147 1.70089543 21.8513147"></polygon>
+        <filter x="-8.2%" y="-23.7%" width="116.3%" height="132.9%" filterUnits="objectBoundingBox" id="filter-19">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
             <feOffset dx="0" dy="-2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
@@ -365,23 +365,21 @@
                                     <path d="M18.2878158,14.2093249 L33.8047505,14.2093249" id="Line-2-Copy" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path>
                                 </g>
                             </g>
-                            <g id="Email-Illustration" transform="translate(14.000000, 155.989744)">
-                                <g id="Group-9" transform="translate(0.000000, 1.000000)">
+                            <g id="Email-Illustration" transform="translate(14.000000, 156.989744)">
+                                <g id="Group-9">
                                     <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="49.512577" height="33.9909341"></rect>
-                                    <rect id="Rectangle" stroke="#003D4C" fill-opacity="0.4" fill="url(#radialGradient-15)" x="0.5" y="0.5" width="48.512577" height="32.9909341"></rect>
+                                    <rect id="Rectangle" stroke="#003D4C" fill-opacity="0.7" fill="url(#radialGradient-15)" x="0.5" y="0.5" width="48.512577" height="32.9909341"></rect>
                                     <g id="Triangle-Copy-4">
                                         <use fill="black" fill-opacity="1" filter="url(#filter-17)" xlink:href="#path-16"></use>
-                                        <use stroke="#BED8F4" stroke-width="0.5" fill="#EEF5FC" fill-rule="evenodd" xlink:href="#path-16"></use>
+                                        <use stroke="#003D4C" stroke-width="1" fill="#EBFBFE" fill-rule="evenodd" xlink:href="#path-16"></use>
                                     </g>
-                                    <g id="Triangle" transform="translate(24.350448, 10.925657) scale(1, -1) translate(-24.350448, -10.925657) ">
+                                    <g id="Triangle" transform="translate(24.700895, 10.925657) scale(1, -1) translate(-24.700895, -10.925657) ">
                                         <use fill="black" fill-opacity="1" filter="url(#filter-19)" xlink:href="#path-18"></use>
-                                        <use stroke="#BED8F4" stroke-width="0.5" fill="#EEF5FC" fill-rule="evenodd" xlink:href="#path-18"></use>
+                                        <use stroke="#003D4C" stroke-width="1" fill="#EBFBFE" fill-rule="evenodd" xlink:href="#path-18"></use>
                                     </g>
-                                    <rect id="Rectangle-Copy-100" stroke="#003D4C" x="0.5" y="0.5" width="48.512577" height="32.9909341"></rect>
+                                    <path d="M20.248,8.79425622 C20.248,6.02225622 22.192,4.09025622 25,4.09025622 C27.808,4.09025622 29.752,6.04625622 29.752,8.79425622 C29.752,10.5582562 28.828,11.3622562 27.772,11.3622562 C27.064,11.3622562 26.584,11.0622562 26.32,10.5942562 L26.308,10.5942562 C26.08,11.0382562 25.576,11.3502562 24.724,11.3502562 C23.848,11.3502562 23.248,10.9542562 22.996,10.1742562 C22.888,9.85025622 22.84,9.50225622 22.84,8.84225622 C22.84,8.18225622 22.888,7.83425622 22.996,7.51025622 C23.248,6.73025622 23.848,6.33425622 24.676,6.33425622 C25.312,6.33425622 25.78,6.62225622 25.972,6.94625622 L25.996,6.94625622 L25.996,6.57425622 C25.996,6.50225622 26.044,6.46625622 26.092,6.46625622 L26.98,6.46625622 C27.052,6.46625622 27.076,6.50225622 27.076,6.57425622 L27.076,9.53825622 C27.076,10.1382562 27.4,10.3782562 27.772,10.3782562 C28.24,10.3782562 28.648,10.0182562 28.648,8.79425622 C28.648,6.59825622 27.256,5.07425622 25,5.07425622 C22.744,5.07425622 21.352,6.57425622 21.352,8.79425622 C21.352,11.0142562 22.744,12.5142562 25,12.5142562 C26.116,12.5142562 26.848,12.3102562 27.568,11.9742562 C27.64,11.9382562 27.7,11.9502562 27.736,12.0342562 L28.012,12.6822562 C28.048,12.7422562 28.024,12.8022562 27.964,12.8382562 C27.1,13.2942562 26.224,13.4982562 25,13.4982562 C22.192,13.4982562 20.248,11.5662562 20.248,8.79425622 Z M24.028,9.69425622 C24.184,10.1382562 24.496,10.3542562 24.976,10.3542562 C25.456,10.3542562 25.768,10.1382562 25.912,9.69425622 C25.972,9.50225622 25.996,9.29825622 25.996,8.84225622 C25.996,8.38625622 25.972,8.18225622 25.912,8.00225622 C25.768,7.54625622 25.456,7.33025622 24.976,7.33025622 C24.496,7.33025622 24.184,7.54625622 24.028,8.00225622 C23.968,8.18225622 23.944,8.38625622 23.944,8.84225622 C23.944,9.29825622 23.968,9.50225622 24.028,9.69425622 Z" id="@" fill="#003D4C" fill-rule="nonzero"></path>
+                                    <rect id="Rectangle-Copy-100" stroke="#003D4C" stroke-width="2" x="0" y="0" width="49.512577" height="33.9909341" rx="1"></rect>
                                 </g>
-                                <text id="@" font-family="DINNextLTPro-Medium, DIN Next LT Pro" font-size="18" font-weight="400" fill="#003D4C">
-                                    <tspan x="17.8594249" y="14.8878771">@</tspan>
-                                </text>
                             </g>
                         </g>
                         <g id="Arrows" transform="translate(425.000000, 270.500000) rotate(-270.000000) translate(-425.000000, -270.500000) translate(406.000000, 225.000000)" fill="#85CDDB">
