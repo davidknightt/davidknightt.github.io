@@ -112,26 +112,42 @@ function startNLPTimeline() {
 }
 
 var mobileHero = document.querySelector('.hero-section');
+mobileHero.style.setProperty('background-position-x', `50%`);
+var heroTouchDownEvent = null;
+var heroXPercentTouchDown = null;
+var heroXPercentGyro = 50;
 window.USER_IS_TOUCHING = false;
+
 function handleOrientation(event) {
-  if(window.USER_IS_TOUCHING) { return }
-  var y = event.gamma; // In degree in the range [-90,90]
-  var yPercentage = (y/90) * 50 + 50;
-  mobileHero.style.setProperty('background-position-x', `${yPercentage}%`);
+  heroXPercentGyro = (event.gamma/90) * 50 + 50; // NOTE: gamma is in degree in the range [-90,90]
+  if (window.USER_IS_TOUCHING)
+    return;
+  mobileHero.style.setProperty('background-position-x', `${heroXPercentGyro}%`);
 }
 
-function toggleGyroscope(event) {
-  window.USER_IS_TOUCHING = !window.USER_IS_TOUCHING;
+function handleHeroMouseDown(event) {
+  window.USER_IS_TOUCHING = true;
+  heroTouchDownEvent = event.targetTouches[0];
+  var touchDownPercentangeStr = mobileHero.style.getPropertyValue('background-position-x');
+  heroXPercentTouchDown = touchDownPercentangeStr
+    ? parseFloat(mobileHero.style.getPropertyValue('background-position-x'))
+    : 0;
 }
-
+function handleHeroMouseUp(event) {
+  window.USER_IS_TOUCHING = false;
+  $(mobileHero).animate({
+    'background-position-x': `${heroXPercentGyro}%`
+  }, 300);
+}
 function handleHeroMove(event) {
-  if (event.targetTouches.length > 1) { return }
-
-  if (event.targetTouches.length == 1) {
-      var touch = event.targetTouches[0];
-      // Place element where the finger is
-      var touchPositionPercentage = 100 - Math.floor((touch.pageX/event.target.offsetWidth) * 100);
-      mobileHero.style.setProperty('background-position-x', `${touchPositionPercentage}%`);
+  var touch = event.targetTouches[0];
+  if (touch && heroTouchDownEvent) {
+    var xDelta = touch.clientX - heroTouchDownEvent.clientX;
+    var percentDelta = -xDelta / event.target.offsetWidth * 100;
+    var resultPercentagio = heroXPercentTouchDown + percentDelta;
+    resultPercentagio = Math.max(Math.min(resultPercentagio, 100), 0);
+    // console.log(resultPercentagio);
+    mobileHero.style.setProperty('background-position-x', `${resultPercentagio}%`);
   }
 }
 
@@ -246,9 +262,9 @@ $.isMobile = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.t
 document.addEventListener("DOMContentLoaded", function () {
   if ($.isMobile) {
     window.addEventListener('deviceorientation', handleOrientation);
-    mobileHero.addEventListener('touchstart', toggleGyroscope);
+    mobileHero.addEventListener('touchstart', handleHeroMouseDown);
     mobileHero.addEventListener('touchmove', handleHeroMove);
-    mobileHero.addEventListener('touchend', toggleGyroscope);
+    mobileHero.addEventListener('touchend', handleHeroMouseUp);
     return;
   } else {
     // Queue up resources for desktop hero animations
