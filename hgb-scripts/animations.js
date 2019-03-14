@@ -112,6 +112,7 @@ function startNLPTimeline() {
 }
 
 function startBannerImageLeft() {
+  document.querySelector('.banner-image-left').classList.add('active');
   const bannerImageLeftTimeline = new TimelineMax({
     onComplete: function() {
       generateDeviceAnimations(".banner-image-left #Omnichannel-Illustration g[id*='Illustration']");
@@ -130,7 +131,7 @@ function generateDeviceAnimations(selector) {
     // Some of the code for the SVGs export from Sketch/Invision (needlessly) have multiple translate values, but the browser only recognizes the last value, so we just need the last value
     var lastTranslate = device.getAttribute("transform").substring(device.getAttribute("transform").lastIndexOf("translate"));
     var translateValues = lastTranslate.substring(lastTranslate.indexOf("("), lastTranslate.indexOf(")"));
-    var translateYOrigin = translateValues.indexOf(",") + 1;
+    var translateYOrigin = translateValues.indexOf(" ") + 1;
     var translateYValue = parseFloat(translateValues.substring(translateYOrigin));
     var timing = index === 0 ? 0.7 : (index + 1) * 0.5;
     deviceAnimationTimeline.to(device, timing, {y: translateYValue, ease: Power1.easeInOut});
@@ -159,16 +160,12 @@ function startBannerImageRight() {
 
 function generateCloudAnimations(selector) {
   document.querySelectorAll(selector).forEach((cloud, index) => {
-    cloud.animate([
-      {transform: `translateY(0px)`},
-      {transform: `translateY(${(index + 1) * 3}px)`},
-      {transform: `translateY(0px)`}
-    ], {
-      duration: 1500 * (index + 1),
-      easing: "ease-in-out",
-      iterations: Infinity,
-      direction: "alternate"
-    });
+    const cloudTimeline = new TimelineMax({
+      repeat: -1
+    })
+    var timing = (index + 1) * 1.2;
+    cloudTimeline.to(cloud, timing, {y: -10});
+    cloudTimeline.to(cloud, timing, {y: 0});
   })
 }
 
@@ -210,42 +207,44 @@ function handleHeroMove(event) {
 }
 
 function animateCircuitWires() {
-  document.querySelector('.banner-image').classList.add('active');
-  var circuitWires = document.querySelectorAll('.banner-image .circuit-wire');
-  circuitWires.forEach((path, index) => {
-    var offset = anime.setDashoffset(path);
-    path.setAttribute('stroke-dashoffset', offset);
-    var animeSettings;
-    if(index === circuitWires.length - 1) {
-      animeSettings = {
-        targets: path,
-        strokeDashoffset: [offset, 1],
-        duration: anime.random(300, 1000),
-        delay: anime.random(200, 500),
-        direction: 'normal',
-        easing: 'easeInOutSine',
-        autoplay: true,
-        loop: false,
-        complete: function(anim) {
-          animateLightPath(circuitWires, circuitWires[randomPath(circuitWires.length -1)]);
-          startBannerImageLeft();
-          startBannerImageRight();
+  setTimeout(function(){
+    document.querySelector('.banner-image').classList.add('active');
+    var circuitWires = document.querySelectorAll('.banner-image .circuit-wire');
+    circuitWires.forEach((path, index) => {
+      var offset = anime.setDashoffset(path);
+      path.setAttribute('stroke-dashoffset', offset);
+      var animeSettings;
+      if(index === circuitWires.length - 1) {
+        animeSettings = {
+          targets: path,
+          strokeDashoffset: [offset, 1],
+          duration: anime.random(300, 1000),
+          delay: anime.random(200, 500),
+          direction: 'normal',
+          easing: 'easeInOutSine',
+          autoplay: true,
+          loop: false,
+          complete: function(anim) {
+            animateLightPath(circuitWires, circuitWires[randomPath(circuitWires.length -1)]);
+            startBannerImageLeft();
+            startBannerImageRight();
+          }
+        }
+      } else {
+        animeSettings = {
+          targets: path,
+          strokeDashoffset: [offset, 1],
+          duration: anime.random(300, 1000),
+          delay: anime.random(500, 500),
+          direction: 'normal',
+          easing: 'easeInOutSine',
+          autoplay: true,
+          loop: false
         }
       }
-    } else {
-      animeSettings = {
-        targets: path,
-        strokeDashoffset: [offset, 1],
-        duration: anime.random(300, 1000),
-        delay: anime.random(500, 500),
-        direction: 'normal',
-        easing: 'easeInOutSine',
-        autoplay: true,
-        loop: false
-      }
-    }
-    anime(animeSettings);
-  })
+      anime(animeSettings);
+    })
+  }, 1000);
 }
 
 function randomPath(max) {
@@ -253,7 +252,6 @@ function randomPath(max) {
 }
 
 function animateLightPath(lightPaths, path) {
-  document.querySelector('.banner-image-left').classList.add('active');
   var allPaths = lightPaths;
   var lightNode = document.getElementById("light-node");
   lightNode.setAttribute("fill", "#ffeeee");
@@ -290,7 +288,7 @@ function fetchWebflowHeroImages(imageSelector) {
         imgClasses.forEach(classItem => replacement.addClass(classItem));
         $(img).replaceWith(replacement);
         index === heroImages.length - 1 ? animateCircuitWires() : null;
-      })
+      });
   });
 }
 
@@ -336,8 +334,7 @@ function fetchHGBImages(containerSelector, assets, animationFunction) {
 
 function startNewItineraryTimeline() {
   const newItineraryTimeline = new TimelineMax({
-    repeat: -1,
-    repeatDelay: 1
+    repeat: -1
   });
 
   newItineraryTimeline.from(".channel-0", 0.5, {opacity: 0, x: -100}, "channel0Shown");
