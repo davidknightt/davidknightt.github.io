@@ -13,6 +13,20 @@
   opacity: 1;
 }
 
+.banner-image-right.active #Airplane-Illustration #Rectangle {
+  animation: 1.5s infinite alternate streamLevitation;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes streamLevitation {
+  from {
+    y: 39;
+  }
+  to {
+    y: 34;
+  }
+}
+
 .itin-gen-animation-container {
   position: relative;
   overflow: hidden;

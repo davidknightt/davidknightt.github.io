@@ -270,7 +270,9 @@
   width: 100%;
   padding-right: 30px;
   padding-left: 30px;
-  background-color: hsla(189.2307692307692, 52.00%, 95.10%, 1.00);
+  background-image: url('../images/Multichannel-Animation-Clouds.png');
+  background-position: 50% 0%;
+  background-size: cover;
   opacity: 1;
 }
 
@@ -300,6 +302,10 @@
 
 .div-block-7 {
   text-align: center;
+}
+
+.div-block-7.squeeze {
+  display: none;
 }
 
 .text-block-8 {
@@ -836,6 +842,10 @@
   display: none;
 }
 
+.ai-pass-section {
+  padding-top: 20px;
+}
+
 @media (max-width: 991px) {
   .nav-logo-holder {
     padding-left: 20px;
@@ -1030,7 +1040,7 @@
   .hero-section {
     position: relative;
     min-height: 512px;
-    background-image: url('../images/Hero-Full-Image.jpg');
+    background-image: url('../images/Hero-Full-Image_1.jpg');
     background-position: 50% 0%;
     background-size: auto 512px;
   }

@@ -111,30 +111,65 @@ function startNLPTimeline() {
   // })
 }
 
-function levitation(selector) {
-  console.log("levitation");
+function startBannerImageLeft() {
+  const bannerImageLeftTimeline = new TimelineMax({
+    onComplete: function() {
+      generateDeviceAnimations(".banner-image-left #Omnichannel-Illustration g[id*='Illustration']");
+    }
+  })
+
+  bannerImageLeftTimeline.staggerFrom(".banner-image-left #Omnichannel-Illustration g[id*='Illustration']", 0.5, {opacity: 0, ease:Power1.easeOut}, 0.3);
+}
+
+function generateDeviceAnimations(selector) {
+  document.querySelectorAll(selector).forEach((device, index) => {
+    const deviceAnimationTimeline = new TimelineMax({
+      repeat: -1,
+      repeatDelay: 1
+    })
+    // Some of the code for the SVGs export from Sketch/Invision (needlessly) have multiple translate values, but the browser only recognizes the last value, so we just need the last value
+    var lastTranslate = device.getAttribute("transform").substring(device.getAttribute("transform").lastIndexOf("translate"));
+    var translateValues = lastTranslate.substring(lastTranslate.indexOf("("), lastTranslate.indexOf(")"));
+    var translateYOrigin = translateValues.indexOf(",") + 1;
+    var translateYValue = parseFloat(translateValues.substring(translateYOrigin));
+    var timing = index === 0 ? 0.7 : (index + 1) * 0.5;
+    deviceAnimationTimeline.to(device, timing, {y: translateYValue, ease: Power1.easeInOut});
+    deviceAnimationTimeline.to(device, timing, {y: translateYValue + 5, ease: Power1.easeInOut});
+    deviceAnimationTimeline.to(device, timing, {y: translateYValue, ease: Power1.easeInOut});
+  })
 }
 
 function startBannerImageRight() {
   document.querySelector(".banner-image-right").classList.add('active');
   const bannerImageRightTimeline = new TimelineMax({
     onComplete: function() {
-      levitation(".banner-image-right #Airplane-Hotel-Suitcase-Tickets-Illustration g[id*='Illustration']");
+      generateCloudAnimations(".banner-image-right #Airplane-Illustration [id*='Path-11']");
     }
-  })
+  });
 
-  bannerImageRightTimeline.staggerFrom(".banner-image-right #Airplane-Hotel-Suitcase-Tickets-Illustration g[id*='Illustration']", 0.5, {opacity: 0, ease:Power1.easeOut}, 0.3);
+  // Building and suitcase
+  bannerImageRightTimeline.staggerFrom(".banner-image-right #Suitcase-and-Ticket-Illustration, .banner-image-right #Hotel-Illustration", 0.3, {opacity: 0, ease:Power1.easeOut}, 0.3);
+  // Clouds
+  bannerImageRightTimeline.staggerFrom(".banner-image-right #Airplane-Illustration [id*='Path-11']", 0.3, {opacity: 0, ease:Power1.easeOut}, 0.3);
+  // Airplane
+  bannerImageRightTimeline.from(".banner-image-right #Airplane-Illustration #Group-Copy-2", 1, {opacity: 0, x: -200, ease:Power1.easeOut}, "cloudsShown");
+  // Jetstream
+  bannerImageRightTimeline.from(".banner-image-right #Airplane-Illustration #Rectangle", 1, {opacity: 0, x: -200, ease:Power1.easeOut}, "cloudsShown");
 }
 
-function startBannerImageLeft() {
-  const bannerImageLeftTimeline = new TimelineMax({
-    onComplete: function() {
-      levitation(".banner-image-left #Omnichannel-Illustration g[id*='Illustration']");
-      startBannerImageRight();
-    }
+function generateCloudAnimations(selector) {
+  document.querySelectorAll(selector).forEach((cloud, index) => {
+    cloud.animate([
+      {transform: `translateY(0px)`},
+      {transform: `translateY(${(index + 1) * 3}px)`},
+      {transform: `translateY(0px)`}
+    ], {
+      duration: 1500 * (index + 1),
+      easing: "ease-in-out",
+      iterations: Infinity,
+      direction: "alternate"
+    });
   })
-
-  bannerImageLeftTimeline.staggerFrom(".banner-image-left #Omnichannel-Illustration g[id*='Illustration']", 0.5, {opacity: 0, ease:Power1.easeOut}, 0.3);
 }
 
 var mobileHero = document.querySelector('.hero-section');
@@ -193,7 +228,8 @@ function animateCircuitWires() {
         loop: false,
         complete: function(anim) {
           animateLightPath(circuitWires, circuitWires[randomPath(circuitWires.length -1)]);
-          startBannerImageLeft()
+          startBannerImageLeft();
+          startBannerImageRight();
         }
       }
     } else {
