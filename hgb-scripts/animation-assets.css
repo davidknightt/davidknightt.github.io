@@ -31,9 +31,6 @@
   position: relative;
   overflow: hidden;
 }
-.itin-gen-animation-container.active {
-  min-height: 600px;
-}
 #iPhone {
   position: absolute;
   top: 720px;
@@ -58,6 +55,25 @@
   bottom: 100px;
   right: 25px;
   overflow: visible;
+}
+
+/* NEW ITINERARY ANIMATION - MARCH 14, 2019*/
+.messaging-channel {
+  width: 50%;
+}
+
+.channel-0,
+.channel-1,
+.channel-2 {
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+
+/* Itinerary */
+.channel-3 {
+  width: 45%;
+  float: right;
 }
 
 .nlp-animation-container {

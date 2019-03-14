@@ -294,7 +294,7 @@ function fetchWebflowHeroImages(imageSelector) {
   });
 }
 
-function fetchHGBAssets(containerSelector, assets, animationFunction) {
+function fetchHGBSVG(containerSelector, assets, animationFunction) {
   const containerEl = document.querySelector(containerSelector);
   if (!containerEl)
     return;
@@ -315,6 +315,39 @@ function fetchHGBAssets(containerSelector, assets, animationFunction) {
   });
 }
 
+function fetchHGBImages(containerSelector, assets, animationFunction) {
+  const containerEl = document.querySelector(containerSelector);
+  if (!containerEl)
+    return;
+  containerEl.style.visibility = "hidden";
+  Promise.all(assets
+    .map(url => fetch(url)
+    .then(function (res) { 
+      return res.ok ? res.url : null; 
+    }))
+  ).then(function(imageUrls) {
+    containerEl.style.visibility = "visible";
+    containerEl.classList.add("active");
+    var images = imageUrls.map((imageUrl, index) => `<img class="messaging-channel channel-${index}" src="${imageUrl}">`);
+    containerEl.innerHTML = images.join('');
+    animationFunction();
+  })
+}
+
+function startNewItineraryTimeline() {
+  const newItineraryTimeline = new TimelineMax({
+    repeat: -1,
+    repeatDelay: 1
+  });
+
+  newItineraryTimeline.from(".channel-0", 0.5, {opacity: 0, x: -100}, "channel0Shown");
+  newItineraryTimeline.to(".channel-0", 0.5, {opacity: 0, x: 100}, "channel0Shown+=2");
+  newItineraryTimeline.from(".channel-1", 0.5, {opacity: 0, x: -100}, "channel1Shown");
+  newItineraryTimeline.to(".channel-1", 0.5, {opacity: 0, x: 100}, "channel1Shown+=2");
+  newItineraryTimeline.from(".channel-2", 0.5, {opacity: 0, x: -100}, "channel2Shown");
+  newItineraryTimeline.to(".channel-2", 0.5, {opacity: 0, x: 100}, "channel2Shown+=2");
+}
+
 // LINK: https://stackoverflow.com/a/3540295
 $.isMobile = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
 
@@ -331,17 +364,24 @@ document.addEventListener("DOMContentLoaded", function () {
     // NOTE: [class*="banner-image"] will select anything that has a class that contains (but is not necessarily equal to) 'banner-image' - SP
 
     // Queue up resources for itinerary animation
-    fetchHGBAssets(".itin-gen-animation-container", [
-      'hgb-assets/itin-gen-amination-email.svg',
-      'hgb-assets/itin-gen-amination-iphone.svg',
-      'hgb-assets/itin-gen-amination-it1.svg',
-      'hgb-assets/itin-gen-amination-it2.svg',
-      'hgb-assets/itin-gen-amination-it3.svg',
-      'hgb-assets/itin-gen-amination-slack.svg',
-    ], startItineraryTimeline);
+    // fetchHGBSVG(".itin-gen-animation-container", [
+    //   'hgb-assets/itin-gen-amination-email.svg',
+    //   'hgb-assets/itin-gen-amination-iphone.svg',
+    //   'hgb-assets/itin-gen-amination-it1.svg',
+    //   'hgb-assets/itin-gen-amination-it2.svg',
+    //   'hgb-assets/itin-gen-amination-it3.svg',
+    //   'hgb-assets/itin-gen-amination-slack.svg',
+    // ], startItineraryTimeline);
+
+    fetchHGBImages(".itin-gen-animation-container", [
+      'hgb-assets/Email.png',
+      'hgb-assets/SMS.png',
+      'hgb-assets/Slack.png',
+      'hgb-assets/itin-static.png',
+    ], startNewItineraryTimeline);
   
     // Queue up resources for NLP animation
-    fetchHGBAssets(".nlp-animation-container", [
+    fetchHGBSVG(".nlp-animation-container", [
       'hgb-assets/nlp-airline.svg',
       'hgb-assets/nlp-hotel.svg',
       'hgb-assets/nlp-ota.svg',
