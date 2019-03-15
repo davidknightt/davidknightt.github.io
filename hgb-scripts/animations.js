@@ -1,3 +1,9 @@
+if (!Array.from) {
+  Array.from = function (object) {
+      return [].slice.call(object);
+  };
+}
+
 function startItineraryTimeline() {
   const masterTimeline = new TimelineMax({
       onComplete: function () {
@@ -112,18 +118,18 @@ function startNLPTimeline() {
 }
 
 function startBannerImageLeft() {
-  document.querySelector('.banner-image-left').classList.add('active');
+  $('.banner-image-left').addClass('active');
   const bannerImageLeftTimeline = new TimelineMax({
     onComplete: function() {
       generateDeviceAnimations(".banner-image-left #Omnichannel-Illustration g[id*='Illustration']");
     }
   })
 
-  bannerImageLeftTimeline.staggerFrom(".banner-image-left #Omnichannel-Illustration g[id*='Illustration']", 0.5, {opacity: 0, ease:Power1.easeOut}, 0.3);
+  bannerImageLeftTimeline.staggerFrom(".banner-image-left #Omnichannel-Illustration g[id*='Illustration']", 0.2, {opacity: 0, ease:Power1.easeOut}, 0.2);
 }
 
 function generateDeviceAnimations(selector) {
-  document.querySelectorAll(selector).forEach((device, index) => {
+  document.querySelectorAll(selector).forEach(function(device, index) {
     const deviceAnimationTimeline = new TimelineMax({
       repeat: -1,
       repeatDelay: 1
@@ -141,7 +147,7 @@ function generateDeviceAnimations(selector) {
 }
 
 function startBannerImageRight() {
-  document.querySelector(".banner-image-right").classList.add('active');
+  $(".banner-image-right").addClass('active');
   const bannerImageRightTimeline = new TimelineMax({
     onComplete: function() {
       generateCloudAnimations(".banner-image-right #Airplane-Illustration [id*='Path-11']");
@@ -159,7 +165,7 @@ function startBannerImageRight() {
 }
 
 function generateCloudAnimations(selector) {
-  document.querySelectorAll(selector).forEach((cloud, index) => {
+  document.querySelectorAll(selector).forEach(function(cloud, index) {
     const cloudTimeline = new TimelineMax({
       repeat: -1
     })
@@ -170,7 +176,7 @@ function generateCloudAnimations(selector) {
 }
 
 var mobileHero = document.querySelector('.hero-section');
-mobileHero.style.setProperty('background-position-x', `50%`);
+mobileHero.style.setProperty('background-position-x', '50%');
 var heroTouchDownEvent = null;
 var heroXPercentTouchDown = null;
 var heroXPercentGyro = 50;
@@ -180,7 +186,7 @@ function handleOrientation(event) {
   heroXPercentGyro = (event.gamma/90) * 50 + 50; //Gamma is in degree in the range [-90,90]
   if (window.USER_IS_TOUCHING)
     return;
-  mobileHero.style.setProperty('background-position-x', `${heroXPercentGyro}%`);
+  mobileHero.style.setProperty('background-position-x', heroXPercentGyro.toString() + "%");
 }
 
 function handleHeroMouseDown(event) {
@@ -192,7 +198,7 @@ function handleHeroMouseDown(event) {
 
 function handleHeroMouseUp(event) {
   window.USER_IS_TOUCHING = false;
-  $(mobileHero).animate({'background-position-x': `${heroXPercentGyro}%`}, 300)
+  $(mobileHero).animate({'background-position-x': heroXPercentGyro.toString() + "%"}, 300)
 }
 
 function handleHeroMove(event) {
@@ -202,15 +208,15 @@ function handleHeroMove(event) {
     var percentDelta = -xDelta / event.target.offsetWidth * 100;
     var resultPercentage = heroXPercentTouchDown + percentDelta;
     resultPercentage = Math.max(Math.min(resultPercentage, 100), 0);
-    mobileHero.style.setProperty('background-position-x', `${resultPercentage}%`);
+    mobileHero.style.setProperty('background-position-x', resultPercentage.toString() + "%");
   }
 }
 
 function animateCircuitWires() {
   setTimeout(function(){
-    document.querySelector('.banner-image').classList.add('active');
+    $('.banner-image').addClass('active');
     var circuitWires = document.querySelectorAll('.banner-image .circuit-wire');
-    circuitWires.forEach((path, index) => {
+    circuitWires.forEach(function(path, index) {
       var offset = anime.setDashoffset(path);
       path.setAttribute('stroke-dashoffset', offset);
       var animeSettings;
@@ -244,7 +250,7 @@ function animateCircuitWires() {
       }
       anime(animeSettings);
     })
-  }, 100);
+  }, 1000);
 }
 
 function randomPath(max) {
@@ -273,19 +279,19 @@ function animateLightPath(lightPaths, path) {
 
 function fetchWebflowHeroImages(imageSelector) {
   var heroImages = document.querySelectorAll(imageSelector);
-  heroImages.forEach((img, index) => {
+  heroImages.forEach(function(img, index) {
     if (!img || !img.src) {
       return;
     }
     img.style.visibility = "hidden";
     var imgClasses = img.classList;
     fetch(img.src)
-      .then(response => {
+      .then(function(response) {
         return response.text();
       })
-      .then(svgStr => {
+      .then(function(svgStr) {
         let replacement = $(svgStr);
-        imgClasses.forEach(classItem => replacement.addClass(classItem));
+        Array.from(imgClasses).forEach(function(classItem) {replacement.addClass(classItem)});
         $(img).replaceWith(replacement);
         index === heroImages.length - 1 ? animateCircuitWires() : null;
       });
@@ -298,10 +304,12 @@ function fetchHGBSVG(containerSelector, assets, animationFunction) {
     return;
   containerEl.style.visibility = "hidden";
   Promise.all(assets
-    .map(url => fetch(url)
-    .then(function (res) { 
-      return res.ok ? res.text() : null; 
-    }))
+    .map(function(url) {
+      fetch(url)
+      .then(function (res) { 
+        return res.ok ? res.text() : null; 
+      })
+    })
   ).then(function (goodies) {
     containerEl.style.visibility = "visible";
     if (goodies.findIndex(function (x) { return !x; }) != -1) // NOTE: Webflow: these svgs wont load when previewing in webflow
@@ -319,14 +327,16 @@ function fetchHGBImages(containerSelector, assets, animationFunction) {
     return;
   containerEl.style.visibility = "hidden";
   Promise.all(assets
-    .map(url => fetch(url)
-    .then(function (res) { 
-      return res.ok ? res.url : null; 
-    }))
+    .map(function(url) {
+      fetch(url)
+      .then(function (res) { 
+        return res.ok ? res.url : null; 
+      })
+    })
   ).then(function(imageUrls) {
     containerEl.style.visibility = "visible";
     containerEl.classList.add("active");
-    var images = imageUrls.map((imageUrl, index) => `<img class="messaging-channel channel-${index}" src="${imageUrl}">`);
+    var images = imageUrls.map(function(imageUrl, index) {"<img class='messaging-channel channel-" + index + ' src=' + imageUrl + "'>"});
     containerEl.innerHTML = images.join('');
     animationFunction();
   })
@@ -337,11 +347,11 @@ function startNewItineraryTimeline() {
     repeat: -1
   });
 
-  newItineraryTimeline.from(".channel-0", 0.5, {opacity: 0, x: -100}, "channel0Shown");
+  newItineraryTimeline.from(".channel-0", 0.5, {opacity: 0}, "channel0Shown");
   newItineraryTimeline.to(".channel-0", 0.5, {opacity: 0, x: 100}, "channel0Shown+=2");
-  newItineraryTimeline.from(".channel-1", 0.5, {opacity: 0, x: -100}, "channel1Shown");
+  newItineraryTimeline.from(".channel-1", 0.5, {opacity: 0}, "channel1Shown");
   newItineraryTimeline.to(".channel-1", 0.5, {opacity: 0, x: 100}, "channel1Shown+=2");
-  newItineraryTimeline.from(".channel-2", 0.5, {opacity: 0, x: -100}, "channel2Shown");
+  newItineraryTimeline.from(".channel-2", 0.5, {opacity: 0}, "channel2Shown");
   newItineraryTimeline.to(".channel-2", 0.5, {opacity: 0, x: 100}, "channel2Shown+=2");
 }
 
