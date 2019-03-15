@@ -250,7 +250,7 @@ function animateCircuitWires() {
       }
       anime(animeSettings);
     })
-  }, 1000);
+  }, 100);
 }
 
 function randomPath(max) {
