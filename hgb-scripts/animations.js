@@ -184,7 +184,6 @@ window.USER_IS_TOUCHING = false;
 
 function handleOrientation(event) {
   heroXPercentGyro = (event.gamma/90) * 50 + 50; //Gamma is in degree in the range [-90,90]
-  heroXPercentGyro = Math.max(Math.min(heroXPercentGyro, 100), 0);
   if (window.USER_IS_TOUCHING)
     return;
   mobileHero.style.setProperty('background-position-x', heroXPercentGyro.toString() + "%");
@@ -306,7 +305,7 @@ function fetchHGBSVG(containerSelector, assets, animationFunction) {
   containerEl.style.visibility = "hidden";
   Promise.all(assets
     .map(function(url) {
-      fetch(url)
+      return fetch(url)
       .then(function (res) { 
         return res.ok ? res.text() : null; 
       })
@@ -324,23 +323,17 @@ function fetchHGBSVG(containerSelector, assets, animationFunction) {
 
 function fetchHGBImages(containerSelector, assets, animationFunction) {
   const containerEl = document.querySelector(containerSelector);
+  const hostSite = window.location.origin + "/"
   if (!containerEl)
     return;
   containerEl.style.visibility = "hidden";
-  Promise.all(assets
-    .map(function(url) {
-      fetch(url)
-      .then(function (res) { 
-        return res.ok ? res.url : null; 
-      })
-    })
-  ).then(function(imageUrls) {
-    containerEl.style.visibility = "visible";
-    containerEl.classList.add("active");
-    var images = imageUrls.map(function(imageUrl, index) {"<img class='messaging-channel channel-" + index + ' src=' + imageUrl + "'>"});
-    containerEl.innerHTML = images.join('');
-    animationFunction();
-  })
+  var images = assets.map(function(imageUrl, index) {
+    return "<img class='messaging-channel channel-" + index + "' src='" + hostSite + imageUrl + "'>"
+  });
+  containerEl.innerHTML = images.join('');
+  containerEl.style.visibility = "visible";
+  containerEl.classList.add("active");
+  animationFunction();
 }
 
 function startNewItineraryTimeline() {
