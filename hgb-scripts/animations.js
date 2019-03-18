@@ -184,6 +184,7 @@ window.USER_IS_TOUCHING = false;
 
 function handleOrientation(event) {
   heroXPercentGyro = (event.gamma/90) * 50 + 50; //Gamma is in degree in the range [-90,90]
+  heroXPercentGyro = Math.max(Math.min(heroXPercentGyro, 100), 0);
   if (window.USER_IS_TOUCHING)
     return;
   mobileHero.style.setProperty('background-position-x', heroXPercentGyro.toString() + "%");
