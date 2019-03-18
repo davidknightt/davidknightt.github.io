@@ -85,26 +85,26 @@ function startNLPTimeline() {
 
   // NLP Airline
   nlpTimeline.from('#nlp-airline .channel-tools', 1, {opacity: 0, ease: Power1.easeOut});
-  nlpTimeline.from('#nlp-airline .cursor-hand', 0.5, {x: 1100, y: 300, ease: Power1.easeOut}, 'airlineHandShown');
+  nlpTimeline.from('#nlp-airline .cursor-hand', 0.5, {x: 1100, y: 300, force3D: true, ease: Power1.easeOut}, 'airlineHandShown');
   nlpTimeline.to('#nlp-airline .channel-tools, #nlp-airline .cursor-hand', 0.3, {opacity: 0}, 'airlineHandShown+=1');
   nlpTimeline.from('#nlp-airline .nlp-box', 0.5, {opacity: 0});
-  nlpTimeline.staggerTo('#nlp-airline .nlp-box .text-reveal', 0.7, { scaleX: 0, svgOrigin: '891 0', ease:Power0.easeNone}, 0.3, 'airlineNLPShown');
+  nlpTimeline.staggerTo('#nlp-airline .nlp-box .text-reveal', 0.7, { scaleX: 0, svgOrigin: '891 0', force3D: true, ease:Power0.easeNone}, 0.3, 'airlineNLPShown');
   nlpTimeline.to('#nlp-airline', 2, {x: 4000, ease: Power1.easeIn}, 'airlineNLPShown+=2');
 
   // NLP Hotel
   nlpTimeline.from('#nlp-hotel .channel-tools', 1, {opacity: 0, ease: Power1.easeOut});
-  nlpTimeline.from('#nlp-hotel .cursor-hand', 0.5, {x: 1100, y: 300, ease: Power1.easeOut}, 'hotelHandShown');
+  nlpTimeline.from('#nlp-hotel .cursor-hand', 0.5, {x: 1100, y: 300, force3D: true, ease: Power1.easeOut}, 'hotelHandShown');
   nlpTimeline.to('#nlp-hotel .channel-tools, #nlp-hotel .cursor-hand', 0.3, {opacity: 0}, 'hotelHandShown+=1');
   nlpTimeline.from('#nlp-hotel .nlp-box', 0.5, {opacity: 0});
-  nlpTimeline.staggerTo('#nlp-hotel .nlp-box .text-reveal', 0.7, {scaleX: 0, svgOrigin: '891 0', ease: Power0.easeNone}, 0.3, 'hotelNLPShown');
+  nlpTimeline.staggerTo('#nlp-hotel .nlp-box .text-reveal', 0.7, {scaleX: 0, svgOrigin: '891 0', force3D: true, ease: Power0.easeNone}, 0.3, 'hotelNLPShown');
   nlpTimeline.to('#nlp-hotel', 2, {x: 4000, ease: Power1.easeIn}, 'hotelNLPShown+=2');
 
   // NLP OTA
   nlpTimeline.from('#nlp-ota .channel-tools', 1, {opacity: 0, ease: Power1.easeOut}, 'resetAnimationPoint');
-  nlpTimeline.from('#nlp-ota .cursor-hand', 0.5, {x: 1100, y: 300, ease: Power1.easeOut}, 'otaHandShown');
+  nlpTimeline.from('#nlp-ota .cursor-hand', 0.5, {x: 1100, y: 300, force3D: true, ease: Power1.easeOut}, 'otaHandShown');
   nlpTimeline.to('#nlp-ota .channel-tools, #nlp-ota .cursor-hand', 0.3, {opacity: 0}, 'otaHandShown+=1');
   nlpTimeline.from('#nlp-ota .nlp-box', 0.5, {opacity: 0});
-  nlpTimeline.staggerTo('#nlp-ota .nlp-box .text-reveal', 0.7, {scaleX: 0, svgOrigin: '891 0', ease:Power0.easeNone}, 0.3, 'otaNLPShown');
+  nlpTimeline.staggerTo('#nlp-ota .nlp-box .text-reveal', 0.7, {scaleX: 0, svgOrigin: '891 0', force3D: true, ease:Power0.easeNone}, 0.3, 'otaNLPShown');
   nlpTimeline.to('#nlp-ota', 2, {x: 4000, ease: Power1.easeIn}, 'otaNLPShown+=2');
 
   // Start reseting positions of first screen of timeline when NLP OTA animation begins
@@ -140,9 +140,9 @@ function generateDeviceAnimations(selector) {
     var translateYOrigin = translateValues.indexOf(" ") + 1;
     var translateYValue = parseFloat(translateValues.substring(translateYOrigin));
     var timing = index === 0 ? 0.7 : (index + 1) * 0.5;
-    deviceAnimationTimeline.to(device, timing, {y: translateYValue, ease: Power1.easeInOut});
-    deviceAnimationTimeline.to(device, timing, {y: translateYValue + 5, ease: Power1.easeInOut});
-    deviceAnimationTimeline.to(device, timing, {y: translateYValue, ease: Power1.easeInOut});
+    deviceAnimationTimeline.to(device, timing, {y: translateYValue, force3D: true, ease: Power1.easeInOut});
+    deviceAnimationTimeline.to(device, timing, {y: translateYValue + 5, force3D: true, ease: Power1.easeInOut});
+    deviceAnimationTimeline.to(device, timing, {y: translateYValue, force3D: true, ease: Power1.easeInOut});
   })
 }
 
@@ -159,9 +159,9 @@ function startBannerImageRight() {
   // Clouds
   bannerImageRightTimeline.staggerFrom(".banner-image-right #Airplane-Illustration [id*='Path-11']", 0.3, {opacity: 0, ease:Power1.easeOut}, 0.3);
   // Airplane
-  bannerImageRightTimeline.from(".banner-image-right #Airplane-Illustration #Group-Copy-2", 1, {opacity: 0, x: -200, ease:Power1.easeOut}, "cloudsShown");
+  bannerImageRightTimeline.from(".banner-image-right #Airplane-Illustration #Group-Copy-2", 1, {opacity: 0, x: -200, force3D: true, ease:Power1.easeOut}, "cloudsShown");
   // Jetstream
-  bannerImageRightTimeline.from(".banner-image-right #Airplane-Illustration #Rectangle", 1, {opacity: 0, x: -200, ease:Power1.easeOut}, "cloudsShown");
+  bannerImageRightTimeline.from(".banner-image-right #Airplane-Illustration #Rectangle", 1, {opacity: 0, x: -200, force3D: true, ease:Power1.easeOut}, "cloudsShown");
 }
 
 function generateCloudAnimations(selector) {
@@ -170,8 +170,8 @@ function generateCloudAnimations(selector) {
       repeat: -1
     })
     var timing = (index + 1) * 1.2;
-    cloudTimeline.to(cloud, timing, {y: -10});
-    cloudTimeline.to(cloud, timing, {y: 0});
+    cloudTimeline.to(cloud, timing, {y: -10, force3D: true});
+    cloudTimeline.to(cloud, timing, {y: 0, force3D: true});
   })
 }
 
@@ -312,8 +312,8 @@ function fetchHGBSVG(containerSelector, assets, animationFunction) {
     })
   ).then(function (goodies) {
     containerEl.style.visibility = "visible";
-    if (goodies.findIndex(function (x) { return !x; }) != -1) // NOTE: Webflow: these svgs wont load when previewing in webflow
-      return;
+    if (goodies.findIndex(function (x) { return !x; }) != -1)
+      return; 
     // Output fetched resources on page
     containerEl.innerHTML = goodies.join('');
     $(containerEl).addClass('active');
@@ -329,8 +329,8 @@ function fetchHGBImages(containerSelector, assets, animationFunction) {
   containerEl.style.visibility = "hidden";
   var images = assets.map(function(imageUrl, index) {
     return "<img class='messaging-channel channel-" + index + "' src='" + hostSite + imageUrl + "'>"
-  });
-  containerEl.innerHTML = images.join('');
+  }).join('');
+  containerEl.innerHTML = images;
   containerEl.style.visibility = "visible";
   containerEl.classList.add("active");
   animationFunction();
@@ -342,11 +342,11 @@ function startNewItineraryTimeline() {
   });
 
   newItineraryTimeline.from(".channel-0", 0.5, {opacity: 0}, "channel0Shown");
-  newItineraryTimeline.to(".channel-0", 0.5, {opacity: 0, x: 100}, "channel0Shown+=2");
+  newItineraryTimeline.to(".channel-0", 0.5, {opacity: 0, x: 100, force3D: true}, "channel0Shown+=2");
   newItineraryTimeline.from(".channel-1", 0.5, {opacity: 0}, "channel1Shown");
-  newItineraryTimeline.to(".channel-1", 0.5, {opacity: 0, x: 100}, "channel1Shown+=2");
+  newItineraryTimeline.to(".channel-1", 0.5, {opacity: 0, x: 100, force3D: true}, "channel1Shown+=2");
   newItineraryTimeline.from(".channel-2", 0.5, {opacity: 0}, "channel2Shown");
-  newItineraryTimeline.to(".channel-2", 0.5, {opacity: 0, x: 100}, "channel2Shown+=2");
+  newItineraryTimeline.to(".channel-2", 0.5, {opacity: 0, x: 100, force3D: true}, "channel2Shown+=2");
 }
 
 // LINK: https://stackoverflow.com/a/3540295
