@@ -358,7 +358,7 @@ $.isMobile = (/android|webos|iphone|ipod|blackberry|iemobile|opera mini/i.test(n
 
 document.addEventListener("DOMContentLoaded", function () {
   if ($.isMobile) {
-    fetchHGBSVG(".itin-gen-animation-container", ["images/Mobile-Omnichannel-Foreground.svg"], ["omnichannel-mobile"], null);
+    fetchHGBSVG(".itin-gen-animation-container", ["images/Mobile-Omnichannel-Foreground-clear.svg"], ["omnichannel-mobile"], null);
     window.addEventListener('deviceorientation', handleOrientation);
     mobileHero.addEventListener('touchstart', handleHeroMouseDown);
     mobileHero.addEventListener('touchmove', handleHeroMove);
