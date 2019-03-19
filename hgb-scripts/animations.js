@@ -378,7 +378,7 @@ document.addEventListener("DOMContentLoaded", function () {
       'hgb-assets/Email.png',
       'hgb-assets/SMS.png',
       'hgb-assets/Slack.png',
-      'hgb-assets/itin-static.png',
+      'hgb-assets/itin-static.svg',
     ], startNewItineraryTimeline);
   
     // Queue up resources for NLP animation
