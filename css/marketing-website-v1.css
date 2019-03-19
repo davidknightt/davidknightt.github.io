@@ -1411,6 +1411,7 @@
     display: block;
     margin-right: auto;
     margin-left: auto;
+    text-align: center;
   }
   .tab-content-mobile {
     padding-top: 100px;

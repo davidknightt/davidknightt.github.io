@@ -257,7 +257,9 @@ function randomPath(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
+let animateLightPathCount = 0;
 function animateLightPath(lightPaths, path) {
+  if (animateLightPathCount = 50) {return};
   var allPaths = lightPaths;
   var lightNode = document.getElementById("light-node");
   lightNode.setAttribute("fill", "#ffeeee");
@@ -272,6 +274,7 @@ function animateLightPath(lightPaths, path) {
     direction: 'alternate',
     easing: 'linear',
     complete: function() {
+      animateLightPathCount++;
       animateLightPath(allPaths, allPaths[randomPath(allPaths.length -1)])
     }
   })
@@ -298,7 +301,7 @@ function fetchWebflowHeroImages(imageSelector) {
   });
 }
 
-function fetchHGBSVG(containerSelector, assets, animationFunction) {
+function fetchHGBSVG(containerSelector, assets, classes, animationFunction) {
   const containerEl = document.querySelector(containerSelector);
   if (!containerEl)
     return;
@@ -315,9 +318,10 @@ function fetchHGBSVG(containerSelector, assets, animationFunction) {
     if (goodies.findIndex(function (x) { return !x; }) != -1)
       return; 
     // Output fetched resources on page
+    classes ? goodies = classes.map(functiong(classItem, index){ return "<div class='" + classItem + "'>" + goodies[index] + "</div>" }) : null;
     containerEl.innerHTML = goodies.join('');
     $(containerEl).addClass('active');
-    animationFunction();
+    animationFunction ? animationFunction() : null;
   });
 }
 
@@ -333,7 +337,7 @@ function fetchHGBImages(containerSelector, assets, animationFunction) {
   containerEl.innerHTML = images;
   containerEl.style.visibility = "visible";
   containerEl.classList.add("active");
-  animationFunction();
+  animationFunction ? animationFunction() : null;
 }
 
 function startNewItineraryTimeline() {
@@ -354,6 +358,7 @@ $.isMobile = (/android|webos|iphone|ipod|blackberry|iemobile|opera mini/i.test(n
 
 document.addEventListener("DOMContentLoaded", function () {
   if ($.isMobile) {
+    fetchHGBSVG(".itin-gen-animation-container", ["images/Mobile-Omnichannel-Foreground.svg"], ["omnichannel-mobile"], null);
     window.addEventListener('deviceorientation', handleOrientation);
     mobileHero.addEventListener('touchstart', handleHeroMouseDown);
     mobileHero.addEventListener('touchmove', handleHeroMove);
@@ -386,6 +391,6 @@ document.addEventListener("DOMContentLoaded", function () {
       'hgb-assets/nlp-airline.svg',
       'hgb-assets/nlp-hotel.svg',
       'hgb-assets/nlp-ota.svg',
-    ], startNLPTimeline);
+    ], null, startNLPTimeline);
   }
 })
