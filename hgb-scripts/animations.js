@@ -318,7 +318,7 @@ function fetchHGBSVG(containerSelector, assets, classes, animationFunction) {
     if (goodies.findIndex(function (x) { return !x; }) != -1)
       return; 
     // Output fetched resources on page
-    classes ? goodies = classes.map(functiong(classItem, index){ return "<div class='" + classItem + "'>" + goodies[index] + "</div>" }) : null;
+    classes ? goodies = classes.map(function(classItem, index){ return "<div class='" + classItem + "'>" + goodies[index] + "</div>" }) : null;
     containerEl.innerHTML = goodies.join('');
     $(containerEl).addClass('active');
     animationFunction ? animationFunction() : null;
