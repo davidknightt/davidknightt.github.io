@@ -350,7 +350,7 @@ function startNewItineraryTimeline() {
 }
 
 // LINK: https://stackoverflow.com/a/3540295
-$.isMobile = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
+$.isMobile = (/android|webos|iphone|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
 
 document.addEventListener("DOMContentLoaded", function () {
   if ($.isMobile) {
