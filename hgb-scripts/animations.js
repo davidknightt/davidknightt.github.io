@@ -259,7 +259,7 @@ function randomPath(max) {
 
 let animateLightPathCount = 0;
 function animateLightPath(lightPaths, path) {
-  if (animateLightPathCount = 50) {return};
+  if (animateLightPathCount === 50) {return};
   var allPaths = lightPaths;
   var lightNode = document.getElementById("light-node");
   lightNode.setAttribute("fill", "#ffeeee");
