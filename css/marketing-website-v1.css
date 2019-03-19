@@ -1038,6 +1038,9 @@
   .hero-imagery {
     display: none;
   }
+  .omnichannel-desktop {
+    display: none;
+  }
   .hero-section {
     position: relative;
     min-height: 512px;
@@ -1104,6 +1107,12 @@
   .error-message {
     margin-right: 0px;
     margin-left: 0px;
+  }
+  .omnichannel-mobile {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
   }
 }
 
