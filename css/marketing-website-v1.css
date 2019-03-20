@@ -560,7 +560,7 @@
 }
 
 .header-text.ai-pass-ht {
-  padding-bottom: 0px;
+  padding-bottom: 20px;
 }
 
 .sub-header-text {
@@ -1231,7 +1231,8 @@
     padding-left: 20px;
   }
   .nlp-animation-container.squeeze {
-    padding-top: 0px;
+    padding-top: 20px;
+    padding-bottom: 0px;
   }
   .hero-info {
     padding-right: 10px;

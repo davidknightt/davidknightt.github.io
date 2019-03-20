@@ -332,7 +332,10 @@ function fetchHGBImages(containerSelector, assets, animationFunction) {
     return;
   containerEl.style.visibility = "hidden";
   var images = assets.map(function(imageUrl, index) {
-    return "<img class='messaging-channel channel-" + index + "' src='" + hostSite + imageUrl + "'>"
+    let lastSlash = imageUrl.lastIndexOf('/');
+    let lastPeriod = imageUrl.lastIndexOf('.');
+    let imageName = imageUrl.substring(lastSlash + 1, lastPeriod);
+    return "<img class='messaging-channel channel-" + index + "' src='" + hostSite + imageUrl + "' alt='" + imageName + "'>"
   }).join('');
   containerEl.innerHTML = images;
   containerEl.style.visibility = "visible";
@@ -383,7 +386,7 @@ document.addEventListener("DOMContentLoaded", function () {
       'hgb-assets/Email.png',
       'hgb-assets/SMS.png',
       'hgb-assets/Slack.png',
-      'hgb-assets/itin-static.svg',
+      'hgb-assets/Travel Itinerary.svg',
     ], startNewItineraryTimeline);
   
     // Queue up resources for NLP animation
