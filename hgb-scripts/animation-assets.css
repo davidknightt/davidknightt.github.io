@@ -18,6 +18,16 @@
   animation-timing-function: ease-in-out;
 }
 
+.user-agreement-container,
+.privacy-policy-container {
+  font-family: DinNextLTPro, sans-serif;
+  color: hsla(191.84210526315786, 100.00%, 14.90%, 1.00);
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  padding-top: 20px;
+}
+
 @keyframes streamLevitation {
   from {
     y: 39;

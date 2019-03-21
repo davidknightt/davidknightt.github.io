@@ -35,7 +35,7 @@
   right: 0%;
   bottom: auto;
   max-height: 50px;
-  background-color: hsla(193.3333333333333, 33.33%, 94.71%, 0.40);
+  background-color: rgba(237, 244, 246, .8);
 }
 
 .div-block-2 {
@@ -538,7 +538,8 @@
 }
 
 .hero-section {
-  padding-top: 50px;
+  margin-top: 50px;
+  padding-top: 0px;
   background-image: url('../images/Hero-Background.svg');
   background-position: 50% 50%;
   background-size: cover;
@@ -671,7 +672,7 @@
 
 .footer-l-column {
   padding-right: 0px;
-  padding-left: 0px;
+  padding-left: 30px;
   text-align: left;
 }
 
@@ -854,6 +855,75 @@
   padding-top: 20px;
 }
 
+.legal-section {
+  padding-top: 50px;
+}
+
+.tabs-menu-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.tab-link-tab-1-3 {
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: transparent;
+  opacity: 0.5;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+  font-family: DinNextLTPro, sans-serif;
+  color: hsla(191.84210526315786, 100.00%, 14.90%, 1.00);
+  font-size: 18px;
+}
+
+.tab-link-tab-1-3:hover {
+  opacity: 0.75;
+}
+
+.tab-link-tab-1-3.w--current {
+  background-color: transparent;
+  opacity: 1;
+  font-family: DinNextLTPro, sans-serif;
+  color: hsla(191.84210526315786, 100.00%, 14.90%, 1.00);
+  font-size: 18px;
+}
+
+.tab-link-tab-2-3 {
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: transparent;
+  opacity: 0.5;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+  font-family: DinNextLTPro, sans-serif;
+  color: hsla(191.84210526315786, 100.00%, 14.90%, 1.00);
+  font-size: 18px;
+}
+
+.tab-link-tab-2-3:hover {
+  opacity: 0.75;
+}
+
+.tab-link-tab-2-3.w--current {
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: transparent;
+  opacity: 1;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+
 @media (max-width: 991px) {
   .nav-logo-holder {
     padding-left: 20px;
@@ -954,6 +1024,9 @@
     padding-right: 20px;
     padding-left: 20px;
   }
+  .footer-l-column {
+    padding-left: 20px;
+  }
   .div-block-22 {
     padding-bottom: 30px;
   }
@@ -1051,6 +1124,8 @@
   .hero-section {
     position: relative;
     min-height: 512px;
+    margin-top: 50px;
+    padding-top: 0px;
     background-image: url('../images/Hero-Full-Image_1.jpg');
     background-position: 50% 0%;
     background-size: auto 512px;
@@ -1078,6 +1153,9 @@
   }
   .text-field {
     width: 350px;
+  }
+  .footer-l-column {
+    padding-left: 10px;
   }
   .footer-icon {
     padding-left: 20px;
@@ -1124,6 +1202,9 @@
 }
 
 @media (max-width: 479px) {
+  .navbar {
+    background-color: rgba(237, 244, 246, .8);
+  }
   .tab-link-tab-2-2 {
     display: inline-block;
     margin-left: 10px;
@@ -1298,6 +1379,8 @@
   }
   .hero-section {
     min-height: 512px;
+    margin-top: 50px;
+    padding-top: 0px;
     background-image: url('../images/Hero-Full-Image-Mobile.jpg');
     background-position: 50% 50%;
     background-size: auto 512px;
@@ -1346,6 +1429,7 @@
   }
   .footer-l-column {
     padding-bottom: 30px;
+    padding-left: 0px;
     text-align: center;
   }
   .div-block-22 {
@@ -1447,6 +1531,41 @@
     display: block;
     margin-right: auto;
     margin-left: auto;
+  }
+  .legal-section {
+    margin-top: 50px;
+    padding-top: 20px;
+  }
+  .tabs-menu-3 {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .tab-link-tab-1-3 {
+    background-color: transparent;
+    opacity: 0.5;
+    font-family: DinNextLTPro, sans-serif;
+    color: hsla(191.84210526315786, 100.00%, 14.90%, 1.00);
+    font-size: 18px;
+  }
+  .tab-link-tab-1-3.w--current {
+    background-color: transparent;
+    opacity: 1;
+  }
+  .tab-link-tab-2-3 {
+    background-color: transparent;
+    opacity: 0.5;
+    font-family: DinNextLTPro, sans-serif;
+    color: hsla(191.84210526315786, 100.00%, 14.90%, 1.00);
+    font-size: 18px;
+  }
+  .tab-link-tab-2-3.w--current {
+    background-color: transparent;
+    opacity: 1;
+    font-family: DinNextLTPro, sans-serif;
+    color: hsla(191.84210526315786, 100.00%, 14.90%, 1.00);
+    font-size: 18px;
   }
 }
 
