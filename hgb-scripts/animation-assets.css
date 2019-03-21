@@ -113,3 +113,12 @@
   #nlp-ota {
     z-index: 80;
   }
+
+  @media screen and (max-width: 479px) {
+    .nlp-animation-container {
+      height: initial;
+      padding-left: 20px;
+      padding-right: 20px;
+      max-height: none;
+    }
+  }
