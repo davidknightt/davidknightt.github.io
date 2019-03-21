@@ -26,6 +26,8 @@
   line-height: 22px;
   font-weight: 400;
   padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 @keyframes streamLevitation {
