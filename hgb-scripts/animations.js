@@ -175,12 +175,45 @@ function generateCloudAnimations(selector) {
   })
 }
 
+$(document).ready(function() {
+  setTimeout(function() {
+    //Browser calculation
+    //https://stackoverflow.com/questions/9792366/how-can-i-determine-the-distance-of-an-object-to-the-right-browser-window-border
+    var $tabs = $('.tabs-menu-2.w-tab-menu');
+    $.marginLength = $(window).width() - ($tabs.width());
+    var marginLength = Math.round($.marginLength);
+    var marginLengthPadding = marginLength - 15;
+    $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
+      if ($.isMobile && $(window).width() < $tabs.width()) {
+          var tabMovementX = marginLengthPadding - tabResultPx;
+          tabMovementX = Math.max(Math.min(tabMovementX, 0), marginLengthPadding);
+          if (tabLeftPositionTouchDown <= marginLengthPadding)
+          return;
+          $tabs.animate({'left':'+='+tabMovementX});
+      }
+    });
+    $('.tab-link-tab-1-2.w-inline-block.w-tab-link').click( function() {
+      if ($.isMobile) {
+          var tabMovementX = -tabResultPx;
+          if (tabLeftPositionTouchDown > 0)
+          return;
+          $tabs.animate({'left':'+='+tabMovementX});
+        // }
+      }
+    });
+  }, 1000);
+});
+
 var mobileHero = document.querySelector('.hero-section');
+var tabSection = document.querySelector('.tabs-menu-2.squeeze.w-tab-menu')
 mobileHero.style.setProperty('background-position-x', '50%');
+tabSection.style.setProperty('left', '0px');
 var heroTouchDownEvent = null;
 var heroXPercentTouchDown = null;
 var heroXPercentGyro = 50;
+var tabTouchDownEvent = null;
 window.USER_IS_TOUCHING = false;
+var tabResultPx = 0;
 
 function handleOrientation(event) {
   heroXPercentGyro = (event.gamma/90) * 50 + 50; //Gamma is in degree in the range [-90,90]
@@ -210,6 +243,30 @@ function handleHeroMove(event) {
     resultPercentage = Math.max(Math.min(resultPercentage, 100), 0);
     mobileHero.style.setProperty('background-position-x', resultPercentage.toString() + "%");
   }
+}
+
+function handleTabMouseDown(event) {
+  window.USER_IS_TOUCHING = true;
+  tabTouchDownEvent = event.targetTouches[0];
+  var touchDownPercentangeStr = tabSection.style.getPropertyValue('left');
+  tabLeftPositionTouchDown = touchDownPercentangeStr ? parseFloat(tabSection.style.getPropertyValue('left')): 0;
+}
+
+function handleTabMouseMove(event) {
+  var touch = event.targetTouches[0];
+  if (touch && tabTouchDownEvent) {
+    var xDelta = tabTouchDownEvent.clientX - touch.clientX;
+    var percentDelta = -xDelta / event.target.offsetWidth * 100;
+    var resultPx = tabLeftPositionTouchDown + percentDelta;
+    var marginLengthPadding = (Math.round($.marginLength)-15);
+    resultPx = Math.max(Math.min(resultPx, 0), marginLengthPadding);
+    tabResultPx = resultPx;
+    tabSection.style.setProperty('left', resultPx.toString() + "px");
+  }
+}
+
+function handleTabMouseUp(event) {
+  window.USER_IS_TOUCHING = false;
 }
 
 function animateCircuitWires() {
@@ -366,6 +423,9 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileHero.addEventListener('touchstart', handleHeroMouseDown);
     mobileHero.addEventListener('touchmove', handleHeroMove);
     mobileHero.addEventListener('touchend', handleHeroMouseUp);
+    tabSection.addEventListener('touchstart', handleTabMouseDown);
+    tabSection.addEventListener('touchmove', handleTabMouseMove);
+    tabSection.addEventListener('touchend', handleTabMouseUp);
     return;
   } else {
     // Queue up resources for desktop hero animations
