@@ -185,20 +185,31 @@ $(document).ready(function() {
     var marginLengthPadding = marginLength - 15;
     $('.tab-link-tab-2-2.w-inline-block.w-tab-link').click( function() {
       if ($.isMobile && $(window).width() < $tabs.width()) {
-          var tabMovementX = marginLengthPadding - tabResultPx;
-          tabMovementX = Math.max(Math.min(tabMovementX, 0), marginLengthPadding);
+          var touchDownPercentangeStr = tabSection.style.getPropertyValue('left');
+          tabLeftPositionTouchDown = Math.round(touchDownPercentangeStr ? parseFloat(tabSection.style.getPropertyValue('left')): 0);
           if (tabLeftPositionTouchDown <= marginLengthPadding)
           return;
-          $tabs.animate({'left':'+='+tabMovementX});
+          if (tabLeftPositionTouchDown == 0) {
+            $tabs.animate({'left':'+='+marginLengthPadding}, 200, 'swing');
+          } else {
+            var tabMovementX = marginLengthPadding - Math.round(tabResultPx);
+            tabMovementX = Math.max(Math.min(tabMovementX, 0), marginLengthPadding);
+            $tabs.animate({'left':'+='+tabMovementX}, 200, 'swing');
+          }
       }
     });
     $('.tab-link-tab-1-2.w-inline-block.w-tab-link').click( function() {
       if ($.isMobile) {
-          var tabMovementX = -tabResultPx;
-          if (tabLeftPositionTouchDown > 0)
+          var touchDownPercentangeStr = tabSection.style.getPropertyValue('left');
+          tabLeftPositionTouchDown = Math.round(touchDownPercentangeStr ? parseFloat(tabSection.style.getPropertyValue('left')): 0);
+          if (tabLeftPositionTouchDown >= 0)
           return;
-          $tabs.animate({'left':'+='+tabMovementX});
-        // }
+          if (tabLeftPositionTouchDown == marginLengthPadding) {
+            $tabs.animate({'left':'-='+marginLengthPadding}, 200, 'swing')
+          } else {
+            var tabMovementX = Math.round(-tabResultPx);
+            $tabs.animate({'left':'+='+tabMovementX}, 200, 'swing');
+          }
       }
     });
   }, 1000);
