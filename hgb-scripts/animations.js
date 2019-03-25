@@ -314,10 +314,10 @@ function swipeEnd(e) {
       direction = (touchEndCoords.x < 0)? 'left' : 'right';
       switch(direction){
         case 'left':
-          eventFire(document.getElementById('Tab 2'), 'click');
+          eventFire(document.getElementById('Tab-2'), 'click');
           break;
         case 'right':
-          eventFire(document.getElementById('Tab 1'), 'click');
+          eventFire(document.getElementById('Tab-1'), 'click');
           break;
       }
     }
