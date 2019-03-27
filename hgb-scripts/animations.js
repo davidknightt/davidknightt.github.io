@@ -213,6 +213,23 @@ $(document).ready(function() {
       }
     });
   }, 1000);
+
+  $('#email-btn').click(function() {
+    const Url = "https://hellogbyemail.herokuapp.com/send-email";
+    var client_name = document.getElementById('NAME-2').value;
+    var client_email = document.getElementById('EMAIL-4').value;
+    var client_country = document.getElementById('COUNTRY-2').value;
+    var client_message = document.getElementById('MESSAGE-2').value;
+    const body = {
+      "client_name": client_name,
+      "client_email": client_email,
+      "client_country": client_country,
+      "client_message": client_message
+    };
+    $.post(Url, body, function(e, status) {
+      console.log(body)
+    });
+    })
 });
 
 var mobileHero = document.querySelector('.hero-section');
@@ -532,3 +549,5 @@ document.addEventListener("DOMContentLoaded", function () {
     ], null, startNLPTimeline);
   }
 })
+
+

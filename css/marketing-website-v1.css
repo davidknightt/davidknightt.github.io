@@ -493,7 +493,8 @@
 }
 
 .request-demo-section {
-  padding-top: 50px;
+  margin-top: 50px;
+  padding-top: 30px;
   background-image: url('../images/Clouds-Background-Request-Demo-Page.svg');
   background-position: 50% 100%;
   background-size: cover;
@@ -632,6 +633,7 @@
 
 .text-field {
   width: 407px;
+  max-width: 407px;
   margin-right: auto;
   margin-bottom: 16px;
   margin-left: auto;
@@ -772,6 +774,12 @@
   padding-right: 10px;
   padding-bottom: 20px;
   padding-left: 10px;
+}
+
+.rd-img.eu-img {
+  width: 75%;
+  margin-top: -13px;
+  margin-bottom: 0px;
 }
 
 .text-block-19 {
@@ -926,6 +934,29 @@
   transition: opacity 200ms ease;
 }
 
+.radio-button-field {
+  font-family: DinNextLTPro, sans-serif;
+  color: hsla(191.84210526315786, 100.00%, 14.90%, 1.00);
+}
+
+.radio-button-field-2 {
+  width: 407px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  padding-right: 12px;
+  padding-bottom: 4px;
+  padding-left: 20px;
+  font-family: DinNextLTPro, sans-serif;
+  color: hsla(191.84210526315786, 100.00%, 14.90%, 1.00);
+  font-size: 11px;
+  line-height: 20px;
+}
+
+.radio-button-field-2.radio-button-last {
+  margin-bottom: 15px;
+}
+
 @media (max-width: 991px) {
   .nav-logo-holder {
     padding-left: 20px;
@@ -997,6 +1028,9 @@
     padding-bottom: 20px;
     padding-left: 10px;
   }
+  .div-block-16 {
+    padding-bottom: 20px;
+  }
   .omnichannel-desktop {
     padding-right: 40px;
     padding-left: 40px;
@@ -1039,6 +1073,11 @@
   .rd-img {
     width: 75%;
     margin: auto;
+  }
+  .rd-img.eu-img {
+    width: 65%;
+    max-width: 75%;
+    margin-top: 0px;
   }
   .header-support-text {
     padding-bottom: 10px;
@@ -1159,6 +1198,7 @@
   }
   .text-field {
     width: 350px;
+    max-width: 350px;
   }
   .footer-l-column {
     padding-left: 0px;
@@ -1176,6 +1216,9 @@
   }
   .footer-r-column {
     padding-left: 0px;
+  }
+  .rd-img.eu-img {
+    width: 75%;
   }
   .header-support-text {
     font-size: 16px;
@@ -1204,6 +1247,10 @@
     margin-right: auto;
     margin-left: auto;
     text-align: center;
+  }
+  .radio-button-field-2 {
+    width: 350px;
+    font-size: 10px;
   }
 }
 
@@ -1427,6 +1474,7 @@
   }
   .text-field {
     width: 250px;
+    max-width: 250px;
     margin-bottom: 16px;
   }
   .div-block-21 {
@@ -1472,6 +1520,9 @@
   .rd-img {
     width: 100%;
     max-width: 100%;
+  }
+  .rd-img.eu-img {
+    width: 75%;
   }
   .footer-column {
     margin-left: auto;
@@ -1572,6 +1623,10 @@
     font-family: DinNextLTPro, sans-serif;
     color: hsla(191.84210526315786, 100.00%, 14.90%, 1.00);
     font-size: 18px;
+  }
+  .radio-button-field-2 {
+    width: 250px;
+    line-height: 14px;
   }
 }
 
